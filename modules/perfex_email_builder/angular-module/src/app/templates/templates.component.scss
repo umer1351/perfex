@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  height: inherit;
+  min-height: inherit;
+}
+
+mat-sidenav-container {
+  min-height: inherit;
+}
+
+mat-header-row mat-header-cell:first-child {
+  max-width: 84px;
+}
+mat-cell:first-child {
+  max-width: fit-content;
+  padding-right: 24px;
+}
+
+mat-header-row mat-header-cell:nth-child(2),
+mat-cell:nth-child(2) {
+  // padding-right: 24px;
+  max-width: 400px;
+  border-right: 1px solid rgb(224, 224, 224);
+}
+
+mat-header-row mat-header-cell:nth-child(3),
+mat-cell:nth-child(3) {
+  padding-left: 24px;
+}
+
+// table td {
+//   vertical-align: middle;
+// }
+
+// table tr {
+//   .build-button {
+//     opacity: 0;
+//   }
+
+//   &:hover {
+//     .build-button {
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .perfex-email-builder {
+//   background-color: #8cafed;
+// }
+
+.subject-column {
+  button {
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    will-change: opacity;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    button:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+}
+
+.mat-drawer-container {
+  background: transparent;
+  height: inherit;
+}
+
+.force-select {
+  -webkit-user-select: all; /* Chrome 49+ */
+  -moz-user-select: all; /* Firefox 43+ */
+  -ms-user-select: all; /* No support yet */
+  user-select: all; /* Likely future */
+  margin-bottom: 1rem;
+}

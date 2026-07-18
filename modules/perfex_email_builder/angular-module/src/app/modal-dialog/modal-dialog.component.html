@@ -1,0 +1,86 @@
+<div class="mat-typography">
+  <ng-container *ngIf="data.type === 'confirm'">
+    <h2 mat-dialog-title>Are you sure?</h2>
+    <mat-dialog-content>
+      You are about to close the builder, but there're unsaved changes, which
+      will be lost. Are you sure?
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="space-between center">
+      <button mat-button color="warn" cdkFocusInitial mat-dialog-close>
+        No, Go back!
+      </button>
+      <button mat-button [mat-dialog-close]="true">
+        Yes, Close it.
+      </button>
+    </mat-dialog-actions>
+  </ng-container>
+
+  <ng-container *ngIf="data.type === 'confirm-revert'">
+    <h2 mat-dialog-title>Are you sure?</h2>
+    <mat-dialog-content>
+      <p>You are about to restore this template to default Perfex template, all additional changes will be lost.</p>
+      <p><strong><strong>This will affect only template body, not name nor subject.</strong></strong></p>
+      <p><strong>Are you sure?</strong></p>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="space-between center">
+      <button mat-button color="warn" cdkFocusInitial mat-dialog-close>
+        No, Go back!
+      </button>
+      <button mat-button [mat-dialog-close]="true">
+        Yes, Restore it.
+      </button>
+    </mat-dialog-actions>
+  </ng-container>
+
+  <ng-container *ngIf="data.type === 'edit'">
+    <h2 mat-dialog-title>Edit details</h2>
+    <mat-dialog-content>
+      <form #form>
+        <input type="hidden" name="emailtemplateid" [value]="data.data.emailtemplateid" />
+        <mat-form-field appearance="fill">
+          <mat-label>From Name</mat-label>
+          <input matInput name="fromname" required type="text" [value]="data.data.fromname" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Subject</mat-label>
+          <input matInput name="subject" required type="text" [value]="data.data.subject" />
+        </mat-form-field>
+      </form>
+
+      <mat-list dense *ngIf="data.mergeFields">
+        <ng-container *ngFor="let item of data.mergeFields">
+          <mat-list-item *ngIf="item.key">
+            <div fxFlex fxLayout fxLayoutAlign="space-between center">
+              <span>{{ item.name }}</span>
+              <code>{{ item.key }}</code>
+            </div>
+          </mat-list-item>
+          <mat-divider *ngIf="item.key"></mat-divider>
+        </ng-container>
+      </mat-list>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="space-between center">
+      <button mat-button mat-dialog-close>
+        Cancel
+      </button>
+      <button mat-button color="primary" [disabled]="!checkValidity(form)" [mat-dialog-close]="form" cdkFocusInitial>
+        Save
+      </button>
+    </mat-dialog-actions>
+  </ng-container>
+
+  <ng-container *ngIf="data.type === 'test-email'">
+    <h2 mat-dialog-title>Send test email</h2>
+    <mat-dialog-content>
+      <form #form="ngForm"></form>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="space-between center">
+      <button mat-button color="warn" cdkFocusInitial mat-dialog-close>
+        No, Go back!
+      </button>
+      <button mat-button [mat-dialog-close]="form">
+        Yes, Close it.
+      </button>
+    </mat-dialog-actions>
+  </ng-container>
+</div>

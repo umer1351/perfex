@@ -1,0 +1,13 @@
+node_modules/
+/vendor/
+application/config/app-config.php
+uploads/*
+!uploads/company/
+!uploads/company/*.png
+!uploads/**/index.html
+!uploads/**/.htaccess
+temp/*
+!temp/index.html
+!temp/.htaccess
+.DS_Store
+Thumbs.db

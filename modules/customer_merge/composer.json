@@ -1,0 +1,36 @@
+{
+    "name": "owgit/perfex-customer-merge",
+    "description": "Customer Merge Module for Perfect CRM - Merge duplicate customers while preserving all associated data and relationships.",
+    "type": "perfex-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Uygar Duzgun",
+            "email": "info@uygarduzgun.com",
+            "homepage": "https://uygarduzgun.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "keywords": [
+        "perfex",
+        "perfexcrm",
+        "perfex-crm",
+        "crm",
+        "module",
+        "customer",
+        "merge",
+        "duplicate",
+        "deduplicate",
+        "customer-management"
+    ],
+    "homepage": "https://github.com/owgit/customer_merge",
+    "support": {
+        "issues": "https://github.com/owgit/customer_merge/issues",
+        "source": "https://github.com/owgit/customer_merge"
+    },
+    "extra": {
+        "installer-name": "customer_merge"
+    }
+} 

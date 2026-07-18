@@ -1,0 +1,36 @@
+{
+  "name": "POST to Perfex WhatsApp Chat — Outbound Bot",
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [900, 460],
+  "parameters": {
+    "method": "POST",
+    "url": "https://YOUR_CRM_DOMAIN.com/whatsapp_chat/api/message",
+    "authentication": "genericCredentialType",
+    "genericAuthType": "httpHeaderAuth",
+    "sendHeaders": true,
+    "headerParameters": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "value": "Bearer YOUR_SECRET_TOKEN_HERE"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={\n  \"message_uid\": \"bot-{{ $now.toMillis() }}-{{ $json.to }}\",\n  \"phone\": \"{{ $json.to }}\",\n  \"display_name\": \"{{ $json.display_name ?? $json.to }}\",\n  \"direction\": \"outbound\",\n  \"sender_type\": \"bot\",\n  \"message_type\": \"text\",\n  \"message_text\": \"{{ $json.bot_reply }}\",\n  \"sent_at\": \"{{ $now.format('yyyy-MM-dd HH:mm:ss') }}\",\n  \"channel\": \"whatsapp\",\n  \"payload\": {{ JSON.stringify($json) }}\n}",
+    "options": {
+      "timeout": 10000,
+      "response": {
+        "response": {
+          "neverError": true
+        }
+      }
+    }
+  }
+}

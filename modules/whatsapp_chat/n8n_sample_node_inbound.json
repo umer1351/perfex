@@ -1,0 +1,36 @@
+{
+  "name": "POST to Perfex WhatsApp Chat — Inbound",
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [900, 300],
+  "parameters": {
+    "method": "POST",
+    "url": "https://YOUR_CRM_DOMAIN.com/whatsapp_chat/api/message",
+    "authentication": "genericCredentialType",
+    "genericAuthType": "httpHeaderAuth",
+    "sendHeaders": true,
+    "headerParameters": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "value": "Bearer YOUR_SECRET_TOKEN_HERE"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={\n  \"message_uid\": \"{{ $json.id }}\",\n  \"phone\": \"{{ $json.from }}\",\n  \"display_name\": \"{{ $json.profile_name ?? $json.from }}\",\n  \"direction\": \"inbound\",\n  \"sender_type\": \"customer\",\n  \"message_type\": \"{{ $json.type ?? 'text' }}\",\n  \"message_text\": \"{{ $json.text.body ?? $json.caption ?? '' }}\",\n  \"sent_at\": \"{{ $now.format('yyyy-MM-dd HH:mm:ss') }}\",\n  \"channel\": \"whatsapp\",\n  \"payload\": {{ JSON.stringify($json) }}\n}",
+    "options": {
+      "timeout": 10000,
+      "response": {
+        "response": {
+          "neverError": true
+        }
+      }
+    }
+  }
+}
