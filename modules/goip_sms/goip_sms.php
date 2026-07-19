@@ -1,5 +1,5 @@
 /**
- * GoIP SMS Module for Perfect ERP
+ * GoIP SMS Module for ZAM ERP
  * Copyright (C) 2025 ProEM, s.r.o.
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 Module Name: GoIP SMS
-Description: GoIP SMS Gateway integration for Perfect ERP
+Description: GoIP SMS Gateway integration for ZAM ERP
 Version: 1.0.0
 Author: Your Name
 */

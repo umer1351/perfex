@@ -1,7 +1,7 @@
 <h4 class="bold text-success">Installation successful!</h4>
 
 <p class="text-muted">
-    <b>Perfect ERP</b> &mdash; Full White-Label Open Source ERP Solution, developed by
+    <b>ZAM ERP</b> &mdash; Full White-Label Open Source ERP Solution, developed by
     <a href="https://zamstudios.com" target="_blank">ZAM Studios</a>.
 </p>
 

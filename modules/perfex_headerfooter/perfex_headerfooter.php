@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 Module Name: Header & Footer Code
-Description: Allow you to enter custom javascript into the header and footer of the Perfect ERP Admin & Client Frontend
+Description: Allow you to enter custom javascript into the header and footer of the ZAM ERP Admin & Client Frontend
 Version: 1.0.1
 Author: Granulr Ltd
 Author URI: https://granulr.uk

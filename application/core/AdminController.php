@@ -148,7 +148,7 @@ class AdminController extends App_Controller
                     $this->app_modules->activate($moduleName);
                 }
             } catch (\Throwable $e) {
-                log_activity('Perfect ERP bundled addon auto-activation failed for [' . $moduleName . ']: ' . $e->getMessage());
+                log_activity('ZAM ERP bundled addon auto-activation failed for [' . $moduleName . ']: ' . $e->getMessage());
             }
         }
     }
