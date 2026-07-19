@@ -252,7 +252,7 @@ class Logtracker extends AdminController
         }
 
         $message = "✅ *Logtracker - Telegram Test Message*\n" .
-                   "This is a test message from your Perfect ERP Logtracker module.\n" .
+                   "This is a test message from your ZAM ERP Logtracker module.\n" .
                    "If you received this, your settings are correct!";
         
         $result = send_telegram_message($message);

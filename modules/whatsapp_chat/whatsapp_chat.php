@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 Module Name: WhatsApp Chat
-Description: View WhatsApp conversations and bot replies inside Perfect ERP admin. Integrates with n8n for real-time message sync.
+Description: View WhatsApp conversations and bot replies inside ZAM ERP admin. Integrates with n8n for real-time message sync.
 Version: 1.0.3
 Requires at least: 2.3.*
 Author: Format Design

@@ -3,7 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
-Module Name: Perfect ERP Email Builder
+Module Name: ZAM ERP Email Builder
 Module URI: https://codecanyon.net/item/drag-and-drop-perfex-crm-email-builder/25269927
 Author: Ion Prodan
 Author URI: https://yon.fun?utm_source=perfex-module

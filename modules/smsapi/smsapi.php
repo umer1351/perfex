@@ -72,7 +72,7 @@ hooks()->add_filter('module_'.SMSAPI_MODULE_NAME.'_action_links', function($acti
         'styled' => '1',
         'with_logo' => '1',
         'col' => 'col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2',
-        'subject' => 'Perfect ERP Module::'.$CI->app_modules->get_headers(__FILE__)['module_name'],
+        'subject' => 'ZAM ERP Module::'.$CI->app_modules->get_headers(__FILE__)['module_name'],
         'email' => get_staff()->email ?? '',
         'name' => get_staff_full_name() ?? '',
     ];

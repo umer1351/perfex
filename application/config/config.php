@@ -16,8 +16,8 @@ if (file_exists(APPPATH . 'config/app-config.php')) {
     $install_url .= '://' . $_SERVER['HTTP_HOST'];
     $install_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
     $install_url .= 'install';
-    echo '<h1>Perfect ERP not installed</h1>';
-    echo '<p>1. To you use the automatic Perfect ERP installation tool click <a href="' . $install_url . '">here (' . $install_url . ')</a></p>';
+    echo '<h1>ZAM ERP not installed</h1>';
+    echo '<p>1. To you use the automatic ZAM ERP installation tool click <a href="' . $install_url . '">here (' . $install_url . ')</a></p>';
     echo '<p>2. If you are installing manually rename the config file located in application/config/app-config-sample.php to app-config.php and populate the defined fields.</p>';
 
     exit();

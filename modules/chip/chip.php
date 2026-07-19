@@ -1,8 +1,8 @@
 <?php
 
 /*
-Module Name: CHIP for Perfect ERP
-Description: Integrate CHIP with Perfect ERP
+Module Name: CHIP for ZAM ERP
+Description: Integrate CHIP with ZAM ERP
 Version: 1.0.1
 Requires at least: 2.3.*
 */

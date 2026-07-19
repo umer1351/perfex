@@ -1706,7 +1706,7 @@ CREATE TABLE `tbloptions` (
 
 INSERT INTO `tbloptions` (`id`, `name`, `value`, `autoload`) VALUES
 (1, 'dateformat', 'Y-m-d|%Y-%m-%d', 1),
-(2, 'companyname', 'Perfect ERP', 1),
+(2, 'companyname', 'ZAM ERP', 1),
 (3, 'services', '1', 1),
 (4, 'maximum_allowed_ticket_attachments', '4', 1),
 (5, 'ticket_attachments_file_extensions', '.jpg,.jpeg,.png,.pdf,.doc,.zip,.rar', 1),

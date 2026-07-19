@@ -11,8 +11,8 @@ add_option('perfex_email_builder_client_custom_css', '');
 add_option('perfex_email_builder_purchase_code', '');
 
 add_option(EMAIL_BUILDER_MODULE_NAME . '_default_media_folder', EMAIL_BUILDER_MODULE_NAME);
-update_option('email_header', '<!-- Handled by Perfect ERP Email Builder, any way you can edit it here: ' . admin_url(EMAIL_BUILDER_MODULE_NAME . '/options') . ' -->');
-update_option('email_footer', '<!-- Handled by Perfect ERP Email Builder, any way you can edit it here: ' . admin_url(EMAIL_BUILDER_MODULE_NAME . '/options') . ' -->');
+update_option('email_header', '<!-- Handled by ZAM ERP Email Builder, any way you can edit it here: ' . admin_url(EMAIL_BUILDER_MODULE_NAME . '/options') . ' -->');
+update_option('email_footer', '<!-- Handled by ZAM ERP Email Builder, any way you can edit it here: ' . admin_url(EMAIL_BUILDER_MODULE_NAME . '/options') . ' -->');
 
 if (!$CI->db->table_exists(db_prefix() . '_perfex_email_builder')) {
     $CI->db->query('CREATE TABLE `' . db_prefix() . '_perfex_email_builder` (
