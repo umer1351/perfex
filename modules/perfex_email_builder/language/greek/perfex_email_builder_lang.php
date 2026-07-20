@@ -1,10 +1,10 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'Perfect ERP Εργαλείο δημιουργίας email';
+$lang['perfex_email_builder'] = 'ZAM ERP Εργαλείο δημιουργίας email';
 $lang['edit_an_email_template'] = 'Επεξεργασία προτύπου email';
 $lang['perfex_email_builder_options'] = 'Προσαρμοσμένες επιλογές';
-$lang['email_templates_top_alert'] = 'Έχετε εγκαταστήσει το <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect ERP Εργαλείο δημιουργίας email</a>, θα συνιστούσαμε να επεξεργαστείτε τα πρότυπα εκεί!';
+$lang['email_templates_top_alert'] = 'Έχετε εγκαταστήσει το <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">ZAM ERP Εργαλείο δημιουργίας email</a>, θα συνιστούσαμε να επεξεργαστείτε τα πρότυπα εκεί!';
 $lang['general'] = 'Γενικές επιλογές';
 $lang['inject_code_admin'] = 'Προσαρμοσμένα στυλ διαχειριστή / js';
 $lang['inject_code_client'] = 'Προσαρμοσμένα στυλ πελάτη / js';
