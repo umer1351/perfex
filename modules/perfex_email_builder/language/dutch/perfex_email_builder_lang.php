@@ -1,10 +1,10 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'Perfect ERP E-mailbouwer';
+$lang['perfex_email_builder'] = 'ZAM ERP E-mailbouwer';
 $lang['edit_an_email_template'] = 'Bewerk een e-mailsjabloon';
 $lang['perfex_email_builder_options'] = 'Aangepaste opties';
-$lang['email_templates_top_alert'] = 'Je hebt de <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect ERP E-mailbouwer</a>, we raden aan om de sjablonen daar te bewerken!';
+$lang['email_templates_top_alert'] = 'Je hebt de <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">ZAM ERP E-mailbouwer</a>, we raden aan om de sjablonen daar te bewerken!';
 $lang['general'] = 'Algemene opties';
 $lang['inject_code_admin'] = 'Beheer aangepaste stijlen / js';
 $lang['inject_code_client'] = 'Cliënt aangepaste stijlen / js';

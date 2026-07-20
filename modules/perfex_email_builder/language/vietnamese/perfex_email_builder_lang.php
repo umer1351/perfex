@@ -1,10 +1,10 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'Perfect ERP Email Builder';
+$lang['perfex_email_builder'] = 'ZAM ERP Email Builder';
 $lang['edit_an_email_template'] = 'Bir e-posta şablonunu düzenleme';
 $lang['perfex_email_builder_options'] = 'Özel Seçenekler';
-$lang['email_templates_top_alert'] = 'Yüklediniz <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect ERP Email Builder</a>, buradaki şablonları düzenlemenizi öneririz!';
+$lang['email_templates_top_alert'] = 'Yüklediniz <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">ZAM ERP Email Builder</a>, buradaki şablonları düzenlemenizi öneririz!';
 $lang['general'] = 'Genel seçenekler';
 $lang['inject_code_admin'] = 'Yönetici özel stilleri / js';
 $lang['inject_code_client'] = 'İstemci özel stilleri / js';

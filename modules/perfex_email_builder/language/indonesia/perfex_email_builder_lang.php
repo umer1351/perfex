@@ -1,10 +1,10 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'Perfect ERP Pembuat Email';
+$lang['perfex_email_builder'] = 'ZAM ERP Pembuat Email';
 $lang['edit_an_email_template'] = 'Edit templat email';
 $lang['perfex_email_builder_options'] = 'Opsi Khusus';
-$lang['email_templates_top_alert'] = 'Anda telah menginstal <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect ERP Pembuat Email</a>, kami akan merekomendasikan untuk mengedit template di sana!';
+$lang['email_templates_top_alert'] = 'Anda telah menginstal <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">ZAM ERP Pembuat Email</a>, kami akan merekomendasikan untuk mengedit template di sana!';
 $lang['general'] = 'Pilihan umum';
 $lang['inject_code_admin'] = 'Admin gaya khusus / js';
 $lang['inject_code_client'] = 'Gaya khusus klien / js';

@@ -1,5 +1,6 @@
+<?php
 /**
- * GoIP SMS Module for Perfect ERP
+ * GoIP SMS Module for ZAM ERP
  * Copyright (C) 2025 ProEM, s.r.o.
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-<?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 // Create settings table

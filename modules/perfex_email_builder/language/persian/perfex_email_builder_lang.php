@@ -1,7 +1,7 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'سازنده ایمیل Perfect ERP';
+$lang['perfex_email_builder'] = 'سازنده ایمیل ZAM ERP';
 $lang['edit_an_email_template'] = 'یک الگوی ایمیل را ویرایش کنید';
 $lang['perfex_email_builder_options'] = 'گزینه های سفارشی';
 $lang['email_templates_top_alert'] = 'شما <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect Email Builder</a> را نصب کرده اید ، توصیه می کنیم قالب ها را در آنجا ویرایش کنید!';

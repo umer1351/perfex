@@ -1,10 +1,10 @@
 <?php
 
 # Version 2.4.0
-$lang['perfex_email_builder'] = 'Perfect ERP Builder по имейл';
+$lang['perfex_email_builder'] = 'ZAM ERP Builder по имейл';
 $lang['edit_an_email_template'] = 'Редактиране на шаблон за имейл';
 $lang['perfex_email_builder_options'] = 'Персонализирани опции';
-$lang['email_templates_top_alert'] = 'Инсталирали сте <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">Perfect ERP Builder по имейл</a>, бихме препоръчали да редактирате шаблоните там!';
+$lang['email_templates_top_alert'] = 'Инсталирали сте <a href="' . admin_url(EMAIL_BUILDER_MODULE_NAME) . '">ZAM ERP Builder по имейл</a>, бихме препоръчали да редактирате шаблоните там!';
 $lang['general'] = 'Общи опции';
 $lang['inject_code_admin'] = 'Персонализирани стилове / администратори';
 $lang['inject_code_client'] = 'Клиентски персонализирани стилове / js';

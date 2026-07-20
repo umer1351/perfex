@@ -76,7 +76,7 @@
                 <i
                     class="<?= e($item['icon']); ?> menu-icon"></i>
                 <span class="menu-text">
-                    <?= e(_l($item['name'], '', false)); ?>
+                    <?= _l($item['name'], '', false); ?>
                 </span>
                 <?php if (count($item['children']) > 0) { ?>
                 <span class="fa arrow pleft5 fa-sm tw-mt-1.5"></span>
