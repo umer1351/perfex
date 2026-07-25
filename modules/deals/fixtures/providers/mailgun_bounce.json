@@ -1,0 +1,27 @@
+{
+  "name": "mailgun_bounce",
+  "description": "Mailgun bounce normalization",
+  "kind": "bounce",
+  "provider": "mailgun",
+  "input": {
+    "event-data": {
+      "event": "failed",
+      "severity": "permanent",
+      "recipient": "buyer@example.com",
+      "delivery-status": {
+        "description": "Mailbox does not exist"
+      },
+      "message": {
+        "headers": {
+          "Message-Id": "<mailgun-outbound@example.com>"
+        }
+      }
+    }
+  },
+  "expected_subset": {
+    "recipient": "buyer@example.com",
+    "message_id": "<mailgun-outbound@example.com>",
+    "bounce_type": "hard",
+    "reason": "Mailbox does not exist"
+  }
+}

@@ -1,0 +1,99 @@
+#temperature {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+#temperature::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#temperature::-webkit-slider-thumb:hover {
+  background: #0056b3;
+}
+
+#temperature::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tw-flex {
+  display: flex;
+}
+
+.tw-flex-col {
+  flex-direction: column;
+}
+
+.tw-w-full {
+  width: 100%;
+}
+
+.tw-py-2 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.tw-justify-between {
+  justify-content: space-between;
+}
+
+.tw-items-center {
+  align-items: center;
+}
+
+.tw-self-start {
+  align-self: flex-start;
+}
+
+.tw-self-end {
+  align-self: flex-end;
+}
+
+.tw-mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
+.tw-mr-1 {
+  margin-right: 0.25rem;
+}
+
+.\!tw-text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.tw-rounded {
+  border-radius: 0.25rem;
+}
+
+.tw-p-2 {
+  padding: 0.5rem;
+}
+
+.tw-bg-primary-600\/100 {
+  background-color: #2563eb;
+}
+
+.tw-bg-transparent {
+  background-color: transparent;
+}
+
+.tw-font-normal {
+  font-weight: 400;
+}

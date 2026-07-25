@@ -1,0 +1,26 @@
+{
+  "name": "sendgrid_inbound",
+  "description": "SendGrid inbound parse normalization",
+  "kind": "inbound",
+  "provider": "sendgrid",
+  "input": {
+    "from": "Procurement <procurement@example.com>",
+    "to": "deals+sgthread9@example.com",
+    "subject": "Re: MSA Review",
+    "text": "We have approved the updated terms.",
+    "html": "<p>We have approved the updated terms.</p>",
+    "headers": "Message-ID: <sg-inbound@example.com>\nIn-Reply-To: <deal-thread@example.com>\nTo: deals+sgthread9@example.com"
+  },
+  "expected_subset": {
+    "source": "sendgrid",
+    "from": "procurement@example.com",
+    "to": [
+      "deals+sgthread9@example.com"
+    ],
+    "subject": "Re: MSA Review",
+    "text": "We have approved the updated terms.",
+    "html": "<p>We have approved the updated terms.</p>",
+    "message_id": "<sg-inbound@example.com>",
+    "in_reply_to": "<deal-thread@example.com>"
+  }
+}

@@ -1,0 +1,9 @@
+.container{
+	width: 80%;
+}
+
+.select-placeholder label, .select-placeholder label small {
+    --tw-blur: unset;
+    filter: unset;
+    opacity: unset;
+}

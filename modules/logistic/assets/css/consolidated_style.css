@@ -1,0 +1,108 @@
+.table.dataTable>thead:first-child>tr:first-child>th:nth-child(1) {
+    min-width: 150px;
+}
+.table.dataTable>thead:first-child>tr:first-child>th:nth-child(2) {
+    min-width: 120px;
+}
+.table.dataTable>thead:first-child>tr:first-child>th:nth-child(3) {
+    min-width: 200px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(4) {
+    min-width: 200px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(5) {
+    min-width: 200px;
+}
+
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(6) {
+    min-width: 200px;
+}
+
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(7) {
+    min-width: 120px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(8) {
+    min-width: 80px;
+}
+
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(9) {
+    min-width: 150px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(10) {
+    min-width: 100px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(11) {
+    min-width: 200px;
+}
+ .table.dataTable>thead:first-child>tr:first-child>th:nth-child(12) {
+    min-width: 180px;
+}
+
+.sort-column {
+        width: 31px;
+        min-height: 31px;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        position: relative;
+        margin-left: 5px;
+        margin-top: 0 !important;
+        float: right;
+    }
+    .selectBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+    }
+    .selectBox i {
+        margin-top: 5px;
+        font-size: 19px;
+    }
+    .overSelect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+    }
+    #list-checkboxes {
+        display: none;
+        border: 1px #dadada solid;
+        position: absolute;
+        z-index: 99;
+        background-color: #fff;
+        right: 0;
+        top: 32px;
+        border-radius: 3px;
+        padding: 10px !important;
+        text-align: left;
+        min-width: 216px;
+        min-height: 50px;
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+    #list-checkboxes .checkbox-fade {
+        width: 100%;
+    }
+    #list-checkboxes input[type="checkbox"] {
+     width: 30px !important;
+ }
+ #list-checkboxes span {
+    font-size: 14px;
+}
+.d-block{
+    display: block !important;
+}
+.d-none{
+    display: none !important;
+}

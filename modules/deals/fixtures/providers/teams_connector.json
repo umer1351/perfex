@@ -1,0 +1,37 @@
+{
+  "name": "teams_connector",
+  "description": "Teams message card payload formatting",
+  "kind": "connector",
+  "provider": "teams",
+  "deal": {
+    "id": 77,
+    "title": "Northwind Renewal",
+    "status": "won",
+    "stage_name": "Closed Won",
+    "deal_value": 98000,
+    "owner_name": "Jordan Lee",
+    "detail_url": "https://crm.example.test/admin/deals/details/77"
+  },
+  "context": {
+    "mode": "fixture"
+  },
+  "text": "Deal event: Approval Approved\nDeal: Northwind Renewal",
+  "event_type": "approval_approved",
+  "expected_subset": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "Deals event: Approval Approved",
+    "title": "Approval Approved: Northwind Renewal",
+    "sections": [
+      {
+        "activityTitle": "Deal #77"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "Open Deal"
+      }
+    ]
+  }
+}
