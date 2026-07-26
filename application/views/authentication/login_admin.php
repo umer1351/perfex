@@ -75,8 +75,7 @@
         </div>
 
         <p class="text-center tw-text-neutral-400 tw-text-xs tw-mt-6">
-            ZAM ERP &mdash; Full White-Label Open Source ERP Solution<br>
-            Developed by <a href="https://zamstudios.com" target="_blank" rel="noopener" class="tw-text-neutral-500 hover:tw-text-neutral-700">ZAM Studios</a>
+            ZAM ERP - Complete white label ERP solution. All rights reserved.
         </p>
     </div>
 

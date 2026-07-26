@@ -12,6 +12,13 @@ class Dashboards extends AdminController
     $this->load->model('perfex_dashboard_model');
   }
 
+  private function unserialize_widgets($raw)
+  {
+    $widgets = @unserialize((string) $raw);
+
+    return is_array($widgets) ? $widgets : [];
+  }
+
   public function my_dashboard()
   {
     if (!has_permission('perfex_dashboard', '', 'my_dashboard_view')) {
@@ -34,7 +41,7 @@ class Dashboards extends AdminController
       foreach ($user_dashboards as $user_dashboard) {
         if ($user_dashboard['id'] == $dashboard_id) {
           $dashboard = $user_dashboard;
-          $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+          $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
           break;
         }
       }
@@ -42,14 +49,14 @@ class Dashboards extends AdminController
 
     if (!isset($dashboard) && count($user_dashboards) > 0) {
       $dashboard = $user_dashboards[0];
-      $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+      $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
     }
 
     if (!isset($dashboard)) {
       $all_dashboards = $this->perfex_dashboard_model->get_dashboards();
       if (count($all_dashboards) > 0) {
         $dashboard = $all_dashboards[0];
-        $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+        $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
       } else {
         $dashboard = ['id' => '', 'dashboard_widgets' => []];
       }
@@ -95,7 +102,7 @@ class Dashboards extends AdminController
     }
 
     $dashboard = $dashboard_rows[0];
-    $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+    $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
 
     $data['dashboard'] = $dashboard;
     add_calendar_assets();
@@ -190,7 +197,7 @@ class Dashboards extends AdminController
     }
 
     $dashboard = $dashboard_rows[0];
-    $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+    $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
 
     $dashboard_name = $this->input->post('name');
     if (!isset($dashboard_name)) {
@@ -264,7 +271,7 @@ class Dashboards extends AdminController
     }
 
     $dashboard = $dashboard_rows[0];
-    $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+    $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
 
     $widget_id = $this->input->post('widget_id');
     if (!isset($widget_id)) {
@@ -355,7 +362,7 @@ class Dashboards extends AdminController
     }
 
     $dashboard = $dashboard_rows[0];
-    $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+    $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
 
     $this->perfex_dashboard_model->delete_dashboard($dashboard['id']);
 
@@ -385,7 +392,7 @@ class Dashboards extends AdminController
     }
 
     $dashboard = $dashboard_rows[0];
-    $dashboard['dashboard_widgets'] = unserialize($dashboard['dashboard_widgets']);
+    $dashboard['dashboard_widgets'] = $this->unserialize_widgets($dashboard['dashboard_widgets']);
 
     $available_widgets = perfex_dashboard_get_available_widgets($dashboard);
 
