@@ -1,0 +1,30 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+$lang['alm_call_log'] = 'Call log';
+$lang['alm_call_logs'] = 'AI Call logs';
+$lang['alm_call_log_call_id'] = 'Call ID';
+$lang['alm_call_log_created_at'] = 'Created at';
+$lang['alm_call_log_direction'] = 'Direction';
+$lang['alm_call_log_to_number'] = 'To';
+$lang['alm_call_log_from_number'] = 'From';
+$lang['alm_call_log_recording'] = 'Recording';
+$lang['alm_call_log_status'] = 'Status';
+$lang['alm_call_log_duration'] = 'Duration';
+$lang['alm_call_log_ended_reason'] = 'Ended Reason';
+$lang['leads_dt_last_call_ended_reason'] = 'Last Call Ended Reason';
+$lang['alm_call_log_price'] = 'Price';
+$lang['alm_call_started_at'] = 'Started at';
+$lang['alm_call_log_details'] = 'Call Details';
+$lang['alm_call_log_summary'] = 'Summary';
+$lang['alm_call_log_transcripts'] = 'Transcripts';
+$lang['alm_call_log_lead'] = 'Lead';
+$lang['alm_call_log_inbound'] = 'Inbound';
+$lang['alm_call_log_outbound'] = 'Outbound';
+$lang['alm_call_log_total_calls_today'] = 'Total Calls Today';
+$lang['alm_call_log_total_calls_yesterday'] = 'Total Calls Yesterday';
+$lang['vapi_ai_detect_emotions'] = 'Detect Emotions';
+$lang['filler_injection_enabled'] = 'Filler Injection Enabled';
+$lang['back_channeling_enabled'] = 'Back Channeling Enabled';
+$lang['end_call_function_enabled'] = 'Enable End Call Function';
+$lang['dial_keypad_function_enabled'] = 'Dial Keypad';

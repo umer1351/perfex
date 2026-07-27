@@ -1,0 +1,30 @@
+{
+  "name": "mailgun_inbound",
+  "description": "Mailgun inbound reply normalization",
+  "kind": "inbound",
+  "provider": "mailgun",
+  "input": {
+    "from": "Buyer Example <buyer@example.com>",
+    "recipient": "deals+threada1b2@example.com",
+    "subject": "Re: Enterprise Renewal",
+    "body-plain": "Can we confirm pricing tomorrow?",
+    "body-html": "<p>Can we confirm pricing tomorrow?</p>",
+    "Message-Id": "<mailgun-message@example.com>",
+    "In-Reply-To": "<deal-outbound@example.com>",
+    "thread_token": "threada1b2",
+    "message-headers": "[[\"Message-Id\",\"<mailgun-message@example.com>\"],[\"In-Reply-To\",\"<deal-outbound@example.com>\"],[\"To\",\"deals+threada1b2@example.com\"]]"
+  },
+  "expected_subset": {
+    "source": "mailgun",
+    "from": "buyer@example.com",
+    "to": [
+      "deals+threada1b2@example.com"
+    ],
+    "subject": "Re: Enterprise Renewal",
+    "text": "Can we confirm pricing tomorrow?",
+    "html": "<p>Can we confirm pricing tomorrow?</p>",
+    "message_id": "<mailgun-message@example.com>",
+    "in_reply_to": "<deal-outbound@example.com>",
+    "thread_token": "threada1b2"
+  }
+}

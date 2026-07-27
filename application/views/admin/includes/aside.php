@@ -123,7 +123,7 @@
         <?php hooks()->do_action('after_render_single_aside_menu', $item); ?>
         <?php
         } ?>
-        <?php if ($this->app->show_setup_menu() == true && (is_staff_member() || is_admin())) { ?>
+        <?php if ($this->app->show_setup_menu() == true && is_admin()) { ?>
         <li<?php if (get_option('show_setup_menu_item_only_on_hover') == 1) {
             echo ' style="display:none;"';
         } ?> id="setup-menu-item">

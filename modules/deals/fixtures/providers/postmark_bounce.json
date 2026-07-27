@@ -1,0 +1,19 @@
+{
+  "name": "postmark_bounce",
+  "description": "Postmark bounce webhook normalization",
+  "kind": "bounce",
+  "provider": "postmark",
+  "input": {
+    "RecordType": "Bounce",
+    "Type": "HardBounce",
+    "Email": "security@example.com",
+    "MessageID": "<postmark-outbound@example.com>",
+    "Description": "The recipient server rejected the message."
+  },
+  "expected_subset": {
+    "recipient": "security@example.com",
+    "message_id": "<postmark-outbound@example.com>",
+    "bounce_type": "hard",
+    "reason": "The recipient server rejected the message."
+  }
+}

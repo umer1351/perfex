@@ -1,0 +1,40 @@
+@media screen and (min-width: 1024px) {
+    .emailsmswrapper {
+         width: 100%;
+		 padding: 20px;
+    } 
+}
+
+.mail-or-sms-choice {
+    padding-left: 5px;
+    vertical-align: text-bottom;
+}
+
+.check_label {
+    border: none !important;
+}
+
+.check_div_mail {
+    margin-top: 80px;
+}
+
+.check_div_sms {
+    margin-bottom: 10px;
+}
+
+input.check_label.radio {
+    float: left;
+}
+
+#charNum {
+    padding: 10px;
+}
+
+/* Sidebar submenu: keep labels single-line */
+.nav-second-level li a[href*="customemailandsmsnotifications"] {
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

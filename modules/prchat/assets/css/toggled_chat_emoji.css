@@ -1,0 +1,214 @@
+/**
+ * Emoji Picker Styles for Toggled Chat View
+ * Uses body.toggled-chat-view targeting to avoid conflicts with full view
+ */
+
+/* Emoji Picker Container - Only for toggled chat view */
+body.toggled-chat-view .emoji-picker {
+    position: fixed !important;
+    width: 320px !important;
+    max-height: 350px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    z-index: 10001 !important;
+    display: none !important;
+    overflow: hidden !important;
+    /* Reset conflicting properties */
+    bottom: auto !important;
+    right: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+body.toggled-chat-view .emoji-picker.show {
+    display: block !important;
+}
+
+/* Hide all scrollbars in emoji picker */
+body.toggled-chat-view .emoji-picker,
+body.toggled-chat-view .emoji-picker *,
+body.toggled-chat-view .emoji-picker-body,
+body.toggled-chat-view .emoji-grid {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+body.toggled-chat-view .emoji-picker::-webkit-scrollbar,
+body.toggled-chat-view .emoji-picker *::-webkit-scrollbar,
+body.toggled-chat-view .emoji-picker-body::-webkit-scrollbar,
+body.toggled-chat-view .emoji-grid::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Emoji Picker Header */
+body.toggled-chat-view .emoji-picker-header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+body.toggled-chat-view .emoji-categories {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+body.toggled-chat-view .emoji-category-btn {
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+body.toggled-chat-view .emoji-category-btn:hover {
+    background: #e9ecef;
+}
+
+body.toggled-chat-view .emoji-category-btn.active {
+    background: #2663eb;
+    color: white;
+}
+
+/* Emoji Picker Body - Hidden scrollbar but still scrollable */
+body.toggled-chat-view .emoji-picker-body {
+    padding: 10px;
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body.toggled-chat-view .emoji-picker-body::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Emoji Grid */
+body.toggled-chat-view .emoji-grid {
+    display: grid !important;
+    grid-template-columns: repeat(8, 1fr) !important;
+    gap: 6px !important;
+    max-height: none !important;
+    overflow: hidden !important;
+}
+
+body.toggled-chat-view .emoji-item {
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    padding: 0 !important;
+    text-align: center;
+    box-sizing: border-box !important;
+}
+
+body.toggled-chat-view .emoji-item:hover {
+    background: #e9ecef !important;
+    transform: scale(1.1);
+}
+
+body.toggled-chat-view .emoji-empty {
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+/* Emoji Trigger Button in Chat Input */
+body.toggled-chat-view .emoji-trigger {
+    color: #666;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+body.toggled-chat-view .emoji-trigger:hover {
+    color: #4279f4;
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+/* Emoji picker is appended to <body>, so target via body.dark-mode */
+
+/* Dark mode picker container */
+body.dark-mode .emoji-picker,
+body.toggled-chat-view.dark-mode .emoji-picker {
+    background: #2d2d2d !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid #444 !important;
+}
+
+/* Dark mode header */
+body.dark-mode .emoji-picker-header,
+body.toggled-chat-view.dark-mode .emoji-picker-header {
+    background: #192335 !important;
+    border-bottom-color: #444 !important;
+}
+
+/* Dark mode category buttons */
+body.dark-mode .emoji-category-btn,
+body.toggled-chat-view.dark-mode .emoji-category-btn {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+}
+
+body.dark-mode .emoji-category-btn:hover,
+body.toggled-chat-view.dark-mode .emoji-category-btn:hover {
+    background: #27314b !important;
+}
+
+body.dark-mode .emoji-category-btn.active,
+body.toggled-chat-view.dark-mode .emoji-category-btn.active {
+    background: #2663eb !important;
+    color: white !important;
+}
+
+/* Dark mode emoji body */
+body.dark-mode .emoji-picker-body,
+body.toggled-chat-view.dark-mode .emoji-picker-body {
+    background: #10172a !important;
+}
+
+/* Dark mode emoji items */
+body.dark-mode .emoji-item,
+body.toggled-chat-view.dark-mode .emoji-item {
+    background: transparent !important;
+}
+
+body.dark-mode .emoji-item:hover,
+body.toggled-chat-view.dark-mode .emoji-item:hover {
+    background: #27314b !important;
+}
+
+/* Dark mode empty state */
+body.dark-mode .emoji-empty,
+body.toggled-chat-view.dark-mode .emoji-empty {
+    color: #888 !important;
+}
+
+/* Dark mode trigger button - inside #chatApp */
+body.toggled-chat-view .dark-mode .emoji-trigger,
+body.toggled-chat-view #chatApp.dark-mode .emoji-trigger {
+    color: #999 !important;
+}
+
+body.toggled-chat-view .dark-mode .emoji-trigger:hover,
+body.toggled-chat-view #chatApp.dark-mode .emoji-trigger:hover {
+    color: #f1c40f !important;
+}

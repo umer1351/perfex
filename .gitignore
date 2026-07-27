@@ -11,3 +11,4 @@ temp/*
 !temp/.htaccess
 .DS_Store
 Thumbs.db
+modules/mypos_gateway/libraries/keys/*.pem

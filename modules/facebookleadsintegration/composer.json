@@ -1,0 +1,21 @@
+{
+    "name": "themesic/facebook-instagram-leads-integration",
+    "description": "Facebook & Instagram Leads Integration Module for Perfex CRM",
+    "type": "perfex-module",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "firebase/php-jwt": "^6.4",
+        "rmccue/requests": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "modules\\facebookleadsintegration\\": ""
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

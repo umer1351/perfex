@@ -1,0 +1,21 @@
+{
+  "name": "sendgrid_bounce",
+  "description": "SendGrid event array bounce normalization",
+  "kind": "bounce",
+  "provider": "sendgrid",
+  "input": [
+    {
+      "event": "bounce",
+      "email": "finance@example.com",
+      "smtp-id": "<sendgrid-outbound@example.com>",
+      "reason": "550 mailbox unavailable",
+      "status": "5.0.0"
+    }
+  ],
+  "expected_subset": {
+    "recipient": "finance@example.com",
+    "message_id": "<sendgrid-outbound@example.com>",
+    "bounce_type": "hard",
+    "reason": "550 mailbox unavailable"
+  }
+}

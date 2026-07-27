@@ -1,0 +1,46 @@
+.brround {
+	border-radius: 50%;
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    line-height: 26px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    vertical-align: bottom;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropup .dropdown-menu {
+    bottom: unset !important;
+}
+.a_active{
+    text-decoration: none;
+    background-color: #eee;
+}
+.max-height-400{
+    max-height: 400px;
+}
+.sm-contract-boder{
+    border:1px solid #d2d2d2;
+    min-height:70px;
+    border-radius:4px;
+}
+
+.dropdown-font-size{
+    font-size:14px;
+    vertical-align:middle;
+}
+
+.work_order_area{
+    overflow-y: scroll;
+    height: 700px;
+}

@@ -96,7 +96,7 @@ define('PHPASS_HASH_PORTABLE', false);
 /**
  * Admin URL
  */
-define('ADMIN_URL', 'admin');
+define('ADMIN_URL', 'portal');
 /**
  * Admin URI
  * CUSTOM_ADMIN_URL is not yet tested well, don't define it

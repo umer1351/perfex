@@ -1,0 +1,52 @@
+{
+  "name": "postmark_inbound",
+  "description": "Postmark inbound webhook normalization",
+  "kind": "inbound",
+  "provider": "postmark",
+  "input": {
+    "From": "Legal <legal@example.com>",
+    "FromFull": {
+      "Email": "legal@example.com",
+      "Name": "Legal"
+    },
+    "ToFull": [
+      {
+        "Email": "deals+pmthread7@example.com",
+        "Name": "Deals"
+      }
+    ],
+    "CcFull": [
+      {
+        "Email": "ops@example.com",
+        "Name": "Ops"
+      }
+    ],
+    "Subject": "Re: Security Addendum",
+    "TextBody": "Please send the final signed copy.",
+    "HtmlBody": "<p>Please send the final signed copy.</p>",
+    "MessageID": "<postmark-inbound@example.com>",
+    "MailboxHash": "pmthread7",
+    "Headers": [
+      {
+        "Name": "In-Reply-To",
+        "Value": "<deal-thread@example.com>"
+      }
+    ]
+  },
+  "expected_subset": {
+    "source": "postmark",
+    "from": "legal@example.com",
+    "to": [
+      "deals+pmthread7@example.com"
+    ],
+    "cc": [
+      "ops@example.com"
+    ],
+    "subject": "Re: Security Addendum",
+    "text": "Please send the final signed copy.",
+    "html": "<p>Please send the final signed copy.</p>",
+    "message_id": "<postmark-inbound@example.com>",
+    "in_reply_to": "<deal-thread@example.com>",
+    "thread_token": "pmthread7"
+  }
+}

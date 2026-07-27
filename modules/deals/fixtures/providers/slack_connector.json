@@ -1,0 +1,38 @@
+{
+  "name": "slack_connector",
+  "description": "Slack block payload formatting",
+  "kind": "connector",
+  "provider": "slack",
+  "event_type": "deal_created",
+  "input": {
+    "channel_identifier": "#revenue-ops"
+  },
+  "deal": {
+    "id": 42,
+    "title": "ACME Expansion",
+    "status": "open",
+    "stage_name": "Negotiation",
+    "deal_value": 150000,
+    "owner_name": "Alex Morgan",
+    "detail_url": "https://crm.example.test/admin/deals/details/42"
+  },
+  "context": {
+    "mode": "fixture"
+  },
+  "text": "Deal event: Deal Created\nDeal: ACME Expansion",
+  "expected_subset": {
+    "channel": "#revenue-ops",
+    "text": "Deal event: Deal Created\nDeal: ACME Expansion",
+    "blocks": [
+      {
+        "type": "header"
+      },
+      {
+        "type": "section"
+      },
+      {
+        "type": "context"
+      }
+    ]
+  }
+}
