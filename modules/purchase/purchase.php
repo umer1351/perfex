@@ -214,47 +214,47 @@ function purchase_permissions()
 function purchase_add_footer_components() {
     $CI = &get_instance();
     $viewuri = $_SERVER['REQUEST_URI'];
-    if(!(strpos($viewuri, '/admin/purchase/vendors') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/vendors') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/vendor_manage.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if(!(strpos($viewuri, '/admin/purchase/purchase_request') === false)){    
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_request') === false)){    
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/pur_request_manage.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if(!(strpos($viewuri, '/admin/purchase/quotations') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/quotations') === false)){
         echo '<script src="'. base_url('assets/plugins/signature-pad/signature_pad.min.js').'"></script>';
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/quotation_manage.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if(!(strpos($viewuri, '/admin/purchase/pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_request') === false)){
         echo '<link rel="stylesheet prefetch" href="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.css').'">';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.jquery.js').'"></script>';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/handsontable-chosen-editor.js').'"></script>'; 
     }
-    if(!(strpos($viewuri, '/admin/purchase/view_pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/view_pur_request') === false)){
         echo '<link rel="stylesheet prefetch" href="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.css').'">';
         echo '<script src="'. base_url('assets/plugins/signature-pad/signature_pad.min.js').'"></script>';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.jquery.js').'"></script>';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/handsontable-chosen-editor.js').'"></script>'; 
     }
-    if(!(strpos($viewuri, '/admin/purchase/purchase_order') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_order') === false)){
         echo '<script src="'. base_url('assets/plugins/signature-pad/signature_pad.min.js').'"></script>';
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/purchase_order_manage.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if(!(strpos($viewuri, '/admin/purchase/contracts') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/contracts') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/contract_manage.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if(!(strpos($viewuri, '/admin/purchase/contract') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/contract') === false)){
        
         echo '<script src="'.base_url('assets/plugins/signature-pad/signature_pad.min.js').'"></script>';
     }
-    if (!(strpos($viewuri, '/admin/purchase/setting') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/setting') === false)) {
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/manage_setting.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
-    if (!(strpos($viewuri, '/admin/purchase/pur_order') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_order') === false)) {
         echo '<link rel="stylesheet prefetch" href="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.css').'">';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.jquery.js').'"></script>';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/handsontable-chosen-editor.js').'"></script>'; 
     }
-    if (!(strpos($viewuri, '/admin/purchase/estimate') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/estimate') === false)) {
         echo '<link rel="stylesheet prefetch" href="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.css').'">';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/chosen.jquery.js').'"></script>';
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/handsontable-chosen-editor.js').'"></script>'; 
@@ -275,7 +275,7 @@ function purchase_add_footer_components() {
         echo '<script src="'.base_url('modules/purchase/assets/plugins/handsontable/handsontable-chosen-editor.js').'"></script>'; 
     }
 
-    if (!(strpos($viewuri, '/admin/purchase/reports') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/reports') === false)) {
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js') . '"></script>';
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/highcharts/modules/variable-pie.js') . '"></script>';
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/highcharts/modules/export-data.js') . '"></script>';
@@ -284,25 +284,25 @@ function purchase_add_footer_components() {
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/highcharts/highcharts-3d.js') . '"></script>'; 
     }
 
-    if (!(strpos($viewuri, '/admin/purchase/items') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/items') === false)) {
          echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.min.js') . '"></script>';
          echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.jquery.min.js') . '"></script>';
          echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/simplelightbox/masonry-layout-vanilla.min.js') . '"></script>';
          
     }
 
-    if (!(strpos($viewuri, '/admin/purchase/new_vendor_items') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/new_vendor_items') === false)) {
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/vendor_items.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
 
-    if (!(strpos($viewuri, '/admin/purchase/setting?group=commodity_group') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/setting?group=commodity_group') === false)) {
        
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
         echo '<script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>';
     }
 
-    if (!(strpos($viewuri, '/admin/purchase/setting?group=sub_group') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/setting?group=sub_group') === false)) {
         
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
@@ -312,15 +312,15 @@ function purchase_add_footer_components() {
          echo '<script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/invoices') === false)){    
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/invoices') === false)){    
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/manage_invoices.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/pur_invoice') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_invoice') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/pur_invoice.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/purchase_invoice') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_invoice') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/js/pur_invoice_preview.js') .'?v=' . PURCHASE_REVISION.'"></script>';
     }
     
@@ -333,15 +333,15 @@ function purchase_add_footer_components() {
 function purchase_add_head_components() {
     $CI = &get_instance();
     $viewuri = $_SERVER['REQUEST_URI'];
-    if(!(strpos($viewuri, '/admin/purchase/pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_request') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/view_pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/view_pur_request') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/estimate') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/estimate') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
@@ -361,12 +361,12 @@ function purchase_add_head_components() {
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/pur_order') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_order') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/setting?group=units') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/setting?group=units') === false)){
         echo '<script src="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/setting.css') . '"  rel="stylesheet" type="text/css" />';
@@ -381,32 +381,32 @@ function purchase_head_components() {
     $CI = &get_instance();
     $viewuri = $_SERVER['REQUEST_URI'];
     
-    if(!(strpos($viewuri, '/admin/purchase') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/style.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/contract') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/contract') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/contract.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if (!(strpos($viewuri, '/admin/purchase/setting') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/setting') === false)) {
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/setting.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/commodity_list.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/purchase_order') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_order') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_order_manage.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/pur_order') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_order') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_order.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_request') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_request.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/purchase_request') === false)){    
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_request') === false)){    
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_request_manage.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/view_pur_request') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/view_pur_request') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/view_pur_request.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/estimate') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/estimate') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/estimate_template.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
     if(!(strpos($viewuri, 'purchase/vendors_portal/add_update_quotation') === false)){
@@ -415,28 +415,28 @@ function purchase_head_components() {
     if(!(strpos($viewuri, 'purchase/vendors_portal/pur_order') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/estimate_template.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/quotations') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/quotations') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/estimate_preview_template.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
-    if(!(strpos($viewuri, '/admin/purchase/vendor') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/vendor') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_order_manage.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/items') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/items') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/commodity_list.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.min.css') . '"  rel="stylesheet" type="text/css" />';
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/plugins/simplelightbox/masonry-layout-vanilla.min.css') . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/pur_invoice') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/pur_invoice') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_invoice.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/purchase_invoice') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/purchase_invoice') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/pur_invoice.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
 
-    if(!(strpos($viewuri, '/admin/purchase/payment_invoice') === false)){
+    if(!(strpos($viewuri, '/' . ADMIN_URL . '/purchase/payment_invoice') === false)){
         echo '<link href="' . module_dir_url(PURCHASE_MODULE_NAME, 'assets/css/payment_invoice.css') .'?v=' . PURCHASE_REVISION.'"  rel="stylesheet" type="text/css" />';
     }
 }   

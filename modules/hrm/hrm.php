@@ -132,7 +132,7 @@ function hrm_add_head_components(){
 	echo '<link href="' . module_dir_url('hrm','assets/css/style.css') .'"  rel="stylesheet" type="text/css" />';
 	echo '<link href="' . module_dir_url('hrm','assets/plugins/ComboTree/style.css') .'"  rel="stylesheet" type="text/css" />';
 
-	if ($viewuri == '/admin/hrm') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/highcharts.js').'"></script>';
 		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/modules/variable-pie.js').'"></script>';
 		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/modules/export-data.js').'"></script>';
@@ -141,28 +141,28 @@ function hrm_add_head_components(){
 		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/highcharts-3d.js').'"></script>';
 	}
 	
-	if ($viewuri == '/admin/hrm/timekeeping?group=allocate_shiftwork' || $viewuri == '/admin/hrm/payroll?group=payroll_type' || $viewuri == '/admin/hrm/timekeeping?group=table_shiftwork' || $viewuri == '/admin/hrm/insurances' || strpos($viewuri, 'payroll') !== false ) {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/timekeeping?group=allocate_shiftwork' || $viewuri == '/' . ADMIN_URL . '/hrm/payroll?group=payroll_type' || $viewuri == '/' . ADMIN_URL . '/hrm/timekeeping?group=table_shiftwork' || $viewuri == '/' . ADMIN_URL . '/hrm/insurances' || strpos($viewuri, 'payroll') !== false ) {
 		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/handsontable/handsontable.full.min.js').'"></script>';
 		echo '<link href="' . base_url('modules/hrm/assets/plugins/handsontable/handsontable.full.min.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 
-	if ($viewuri == '/admin/hrm/insurances') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/insurances') {
 		echo '<link href="' . base_url('modules/hrm/assets/css/datepicker.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 	
-	if (strpos($viewuri, '/admin/hrm/member/') !== false) {
+	if (strpos($viewuri, '/' . ADMIN_URL . '/hrm/member/') !== false) {
 		echo '<link href="' . base_url('modules/hrm/assets/css/member.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 	
-	if ($viewuri == '/admin/hrm/payroll?group=payroll_type') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/payroll?group=payroll_type') {
 		echo '<link href="' . base_url('modules/hrm/assets/css/newpayrolltype.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 	
-	if (strpos($viewuri, '/admin/hrm/payroll_table') !== false) {
+	if (strpos($viewuri, '/' . ADMIN_URL . '/hrm/payroll_table') !== false) {
 		echo '<link href="' . base_url('modules/hrm/assets/css/newpayrolltable.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 	
-	if (strpos($viewuri, '/admin/hrm/profile/') !== false) {
+	if (strpos($viewuri, '/' . ADMIN_URL . '/hrm/profile/') !== false) {
 		echo '<link href="' . base_url('modules/hrm/assets/css/profile.css') .'"  rel="stylesheet" type="text/css" />';
 	}
 	
@@ -176,15 +176,15 @@ function hrm_add_footer_components(){
 	echo '<script src="'.module_dir_url('hrm', 'assets/plugins/ComboTree/comboTreePlugin.js').'"></script>';
     echo '<script src="'.module_dir_url('hrm', 'assets/plugins/ComboTree/icontains.js').'"></script>';
 	
-	if ($viewuri == '/admin/hrm/setting?group=workplace') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/setting?group=workplace') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/workplace.js').'"></script>';
 	}
 	
-	if ($viewuri == '/admin/hrm/setting?group=workplace') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/setting?group=workplace') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/workplace.js').'"></script>';
 	}
 
-	if (strpos($viewuri, 'payslip') !== false || $viewuri == '/admin/hrm/payroll') {
+	if (strpos($viewuri, 'payslip') !== false || $viewuri == '/' . ADMIN_URL . '/hrm/payroll') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/payslip.js').'"></script>';
 	}
 	
@@ -197,7 +197,7 @@ function hrm_add_footer_components(){
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/jobposition.js').'"></script>';
 	}
 	
-	if (strpos($viewuri, 'contract_type') !== false || $viewuri == '/admin/hrm/setting') {
+	if (strpos($viewuri, 'contract_type') !== false || $viewuri == '/' . ADMIN_URL . '/hrm/setting') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/contracttype.js').'"></script>';
 	}
 	
@@ -205,15 +205,15 @@ function hrm_add_footer_components(){
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/allowancetype.js').'"></script>';
 	}
 	
-	if ($viewuri == '/admin/hrm/member') {
+	if ($viewuri == '/' . ADMIN_URL . '/hrm/member') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/member.js').'"></script>';
 	}
 
-	if (strpos($viewuri, '/admin/hrm/contract/') !== false) {
+	if (strpos($viewuri, '/' . ADMIN_URL . '/hrm/contract/') !== false) {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/contract.js').'"></script>';
 	}
 
-	if (strpos($viewuri, 'manage_staff') !== false || $viewuri == '/admin/hrm/staff_infor') {
+	if (strpos($viewuri, 'manage_staff') !== false || $viewuri == '/' . ADMIN_URL . '/hrm/staff_infor') {
 		echo '<script src="'.module_dir_url('hrm', 'assets/js/managestaff.js').'"></script>';
 	}
 	

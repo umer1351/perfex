@@ -71,15 +71,15 @@ function int_add_head_component() {
 
 	$viewuri = $_SERVER['REQUEST_URI'];
 
-	if (!(strpos($viewuri, '/admin/team_password/add_normal') === false) || !(strpos($viewuri, '/admin/team_password/add_bank_acount') === false) || !(strpos($viewuri, '/admin/team_password/add_credit_card') === false) || !(strpos($viewuri, '/admin/team_password/add_server') === false) || !(strpos($viewuri, '/admin/team_password/add_email') === false) || !(strpos($viewuri, '/admin/team_password/add_software_license') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_normal') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_bank_acount') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_credit_card') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_server') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_email') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_software_license') === false)) {
 		echo '<link href="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/css/custom.css') . '?v=' . TEAM_PASSWORD_REVISION . '"  rel="stylesheet" type="text/css" />';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/dashboard') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/dashboard') === false)) {
 		echo '<link href="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/css/dashboard.css') . '?v=' . TEAM_PASSWORD_REVISION . '"  rel="stylesheet" type="text/css" />';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/view_normal') === false) || !(strpos($viewuri, '/admin/team_password/view_bank_account') === false) || !(strpos($viewuri, '/admin/team_password/view_credit_card') === false) || !(strpos($viewuri, '/admin/team_password/view_server') === false) || !(strpos($viewuri, '/admin/team_password/view_email') === false) || !(strpos($viewuri, '/admin/team_password/view_software_license') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_normal') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_bank_account') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_credit_card') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_server') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_email') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_software_license') === false)) {
 
 		echo '<link href="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/css/view_password.css') . '?v=' . TEAM_PASSWORD_REVISION . '"  rel="stylesheet" type="text/css" />';
 	}
@@ -168,49 +168,49 @@ function team_password_load_js() {
 	$CI = &get_instance();
 
 	$viewuri = $_SERVER['REQUEST_URI'];
-	if (!(strpos($viewuri, '/admin/team_password/category_management') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/category_management') === false)) {
 		echo '<script src="' . module_dir_url('menu_setup', 'assets/jquery-nestable/jquery.nestable.js') . '"></script>';
 		echo '<link href="' . module_dir_url('menu_setup', 'assets/font-awesome-icon-picker/css/fontawesome-iconpicker.min.css') . '" rel="stylesheet">';
 		echo '<script src="' . module_dir_url('menu_setup', 'assets/font-awesome-icon-picker/js/fontawesome-iconpicker.js') . '"></script>';
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/category.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/view_normal') === false) || !(strpos($viewuri, '/admin/team_password/view_bank_account') === false) || !(strpos($viewuri, '/admin/team_password/view_credit_card') === false) || !(strpos($viewuri, '/admin/team_password/view_email') === false) || !(strpos($viewuri, '/admin/team_password/view_email') === false) || !(strpos($viewuri, '/admin/team_password/view_server') === false) || !(strpos($viewuri, '/admin/team_password/view_software_license') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_normal') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_bank_account') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_credit_card') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_email') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_email') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_server') === false) || !(strpos($viewuri, '/' . ADMIN_URL . '/team_password/view_software_license') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/normal/permission.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/normal/share.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/file/file_action.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/team_password_mgt') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/team_password_mgt') === false)) {
 
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/treeview/src/js/bootstrap-treeview.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/add_normal') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_normal') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/normal/add_normal.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/add_bank_account') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_bank_account') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/bank_account/add_bank_account.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/add_credit_card') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_credit_card') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/credit_card/add_credit_card.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/add_email') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_email') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/email/add_email.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/add_server') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_server') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/server/add_server.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/add_software_license') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/add_software_license') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/software_license/add_software_license.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/report') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/report') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/report/report.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/team_password/dashboard') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/dashboard') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js') . '"></script>';
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/highcharts/modules/variable-pie.js') . '"></script>';
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/highcharts/modules/export-data.js') . '"></script>';
@@ -218,7 +218,7 @@ function team_password_load_js() {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/highcharts/modules/exporting.js') . '"></script>';
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/plugins/highcharts/highcharts-3d.js') . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/team_password/team_password_mgt') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/team_password/team_password_mgt') === false)) {
 		echo '<script src="' . module_dir_url(TEAM_PASSWORD_MODULE_NAME, 'assets/js/team_password_mgt.js') . '?v=' . TEAM_PASSWORD_REVISION . '"></script>';
 	}
 }

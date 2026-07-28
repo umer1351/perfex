@@ -24,7 +24,7 @@ class Zoom_meetings extends AdminController
         $params = array('apiKey' => $apiKey, 'apiSecret' => $apiSecret);
         $zoom = new ZoomAPIWrapper($params);
         $pathParams=array('userId'=>$email);
-        $response = $zoom->doRequest(GET, '/users/{userId}/meetings','' ,$pathParams , '');
+        $response = $zoom->doRequest('GET', '/users/{userId}/meetings','' ,$pathParams , '');
         $data['data']=$response['meetings'];
         $data['title']= _l('zoom_list');
   
@@ -91,7 +91,7 @@ class Zoom_meetings extends AdminController
 		
 			
 		 
-        $response = $zoom->doRequest(DELETE, '/meetings/{meetingId}','' ,$pathParams); 	
+        $response = $zoom->doRequest('DELETE', '/meetings/{meetingId}','' ,$pathParams); 	
 		
 		
 			$this->zoom_model->delete_meeting($meeting_id);			
@@ -167,7 +167,7 @@ class Zoom_meetings extends AdminController
                     'registrants_email_notification' => true
                ];
           }
-        $response = $zoom->doRequest(POST, '/users/{userId}/meetings','' ,$pathParams , $meeting_data); 
+        $response = $zoom->doRequest('POST', '/users/{userId}/meetings','' ,$pathParams , $meeting_data); 
 		
 		
 		
@@ -196,7 +196,7 @@ class Zoom_meetings extends AdminController
 						"first_name"   => $registrant_fname,
 						"last_name"=> $registrant_lname,
 					  );
-					$rp = $zoom->doRequest(POST, '/meetings/{meetingId}/registrants','' ,$pathmeetParams , $registrant_data);
+					$rp = $zoom->doRequest('POST', '/meetings/{meetingId}/registrants','' ,$pathmeetParams , $registrant_data);
 					
 					
 					$description='Join the meeting: <a target="_blank" href="'.$response['join_url'].'"> Link</a>';
@@ -208,7 +208,7 @@ class Zoom_meetings extends AdminController
 						'touserid'=>$to_user_id
 					    
 				    );
-						$res_data= $zoom->doRequest(GET, '/meetings/{meetingId}/invitation','',$pathmeetParams); 
+						$res_data= $zoom->doRequest('GET', '/meetings/{meetingId}/invitation','',$pathmeetParams); 
 						$email_body = $res_data['invitation'];
 						$msg=htmlentities ($email_body);
 						
@@ -225,7 +225,7 @@ class Zoom_meetings extends AdminController
 				if(!empty($customers)){
 					
 					$cust_email=$customers['contacts'][0]->email;
-					$res_data= $zoom->doRequest(GET, '/meetings/{meetingId}/invitation','',$pathmeetParams); 
+					$res_data= $zoom->doRequest('GET', '/meetings/{meetingId}/invitation','',$pathmeetParams); 
 					$email_body = $res_data['invitation'];
 					$msg=htmlentities ($email_body);
 						
@@ -322,7 +322,7 @@ class Zoom_meetings extends AdminController
             "first_name"   => $registrant_fname,
             "last_name"=> $registrant_lname,
           );
-        $response = $zoom->doRequest(POST, '/meetings/{meetingId}/registrants','' ,$pathParams , $registrant_data); 	
+        $response = $zoom->doRequest('POST', '/meetings/{meetingId}/registrants','' ,$pathParams , $registrant_data); 	
         
         if($response['code']==3001){
             set_alert('warning', _l('zoom_meeting_not_exists'));	
@@ -331,7 +331,7 @@ class Zoom_meetings extends AdminController
         else{
 			
 			
-			$response_data= $zoom->doRequest(GET, '/meetings/{meetingId}/invitation','',$pathParams); 
+			$response_data= $zoom->doRequest('GET', '/meetings/{meetingId}/invitation','',$pathParams); 
 			$email_body = $response_data['invitation'];
 			$msg=htmlentities ($email_body);
 			

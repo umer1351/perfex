@@ -23,7 +23,7 @@ Class Client extends ClientsController
         $params = array('apiKey' => $apiKey, 'apiSecret' => $apiSecret);
         $zoom = new ZoomAPIWrapper($params);
         $pathParams=array('userId'=>$email);
-        $response = $zoom->doRequest(GET, '/users/{userId}/meetings','' ,$pathParams , '');
+        $response = $zoom->doRequest('GET', '/users/{userId}/meetings','' ,$pathParams , '');
         $data['data']=$response['meetings'];
        
   
@@ -77,7 +77,7 @@ Class Client extends ClientsController
 		
 			
 		 
-        $response = $zoom->doRequest(DELETE, '/meetings/{meetingId}','' ,$pathParams); 	
+        $response = $zoom->doRequest('DELETE', '/meetings/{meetingId}','' ,$pathParams); 	
 		
 		
 			$this->zoom_model->delete_client_meeting($meeting_id);			

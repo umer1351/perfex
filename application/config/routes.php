@@ -262,6 +262,36 @@ $route['portal/facebookleadsintegration/(.+)'] = 'facebookleadsintegration/$1';
 $route['portal/feedback'] = 'feedback';
 $route['portal/feedback/(.+)'] = 'feedback/$1';
 $route['portal/file_sharing'] = 'file_sharing';
+// Explicit overrides for the admin File_sharing controller's own methods.
+// The module ships its own config/routes.php with a catch-all
+// ($route['file_sharing/(:any)'] = 'file_sharing_public/index/$1';) meant for
+// public share links. Without these, any admin method not already known to
+// that internal routing table (manage, setting, sharing, reports, etc.) falls
+// through to the public controller instead, which shows a generic
+// "file or folder does not exist" message instead of the real admin page.
+$route['portal/file_sharing/manage'] = 'file_sharing/manage';
+$route['portal/file_sharing/file_sharing_media_connector'] = 'file_sharing/file_sharing_media_connector';
+$route['portal/file_sharing/getDirectories/(.+)'] = 'file_sharing/getDirectories/$1';
+$route['portal/file_sharing/setting'] = 'file_sharing/setting';
+$route['portal/file_sharing/change_staff_permissions/(.+)'] = 'file_sharing/change_staff_permissions/$1';
+$route['portal/file_sharing/new_folder'] = 'file_sharing/new_folder';
+$route['portal/file_sharing/add_new_share'] = 'file_sharing/add_new_share';
+$route['portal/file_sharing/add_new_config'] = 'file_sharing/add_new_config';
+$route['portal/file_sharing/delete_config/(.+)'] = 'file_sharing/delete_config/$1';
+$route['portal/file_sharing/update_field/(.+)'] = 'file_sharing/update_field/$1';
+$route['portal/file_sharing/update_sharing_permission/(.+)'] = 'file_sharing/update_sharing_permission/$1';
+$route['portal/file_sharing/update_setting'] = 'file_sharing/update_setting';
+$route['portal/file_sharing/download_management'] = 'file_sharing/download_management';
+$route['portal/file_sharing/sharing'] = 'file_sharing/sharing';
+$route['portal/file_sharing/download_management_table'] = 'file_sharing/download_management_table';
+$route['portal/file_sharing/sharing_table'] = 'file_sharing/sharing_table';
+$route['portal/file_sharing/sharing_detail_table'] = 'file_sharing/sharing_detail_table';
+$route['portal/file_sharing/reports'] = 'file_sharing/reports';
+$route['portal/file_sharing/edit_sharing/(.+)'] = 'file_sharing/edit_sharing/$1';
+$route['portal/file_sharing/delete_sharing/(.+)'] = 'file_sharing/delete_sharing/$1';
+$route['portal/file_sharing/sharing_chart'] = 'file_sharing/sharing_chart';
+$route['portal/file_sharing/download_chart'] = 'file_sharing/download_chart';
+$route['portal/file_sharing/send_mail_to_public'] = 'file_sharing/send_mail_to_public';
 $route['portal/file_sharing/(.+)'] = 'file_sharing/$1';
 $route['portal/flexform'] = 'flexform';
 $route['portal/flexform/(.+)'] = 'flexform/$1';
