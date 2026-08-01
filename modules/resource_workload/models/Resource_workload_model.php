@@ -68,6 +68,15 @@ class Resource_workload_model extends App_Model
             $total_cycles = $task['total_cycles'];
             // Current date
             $date = new DateTime(date('Y-m-d'));
+            // Guard against malformed recurrence data (repeat_every <= 0 or missing type)
+            // that would never advance $re_create_at, combined with cycles == 0 ("repeat
+            // forever"), which previously caused this loop to never terminate.
+            if (!$type || (int) $repeat_every <= 0) {
+                $staffsTasks_recurring_ids[] = $task['taskid'];
+                continue;
+            }
+            $safety_iterations = 0;
+            $previous_recurring_date = null;
             while ($total_cycles <= $cycles) {
 	            // Check if is first recurring
 	            if (!$last_recurring_date) {
@@ -75,6 +84,14 @@ class Resource_workload_model extends App_Model
 	            } else {
 	                $last_recurring_date = date('Y-m-d', strtotime($last_recurring_date));
 	            }
+
+	            // Hard safety cap: if the date fails to advance (or this runs away for
+	            // any other reason), stop instead of hanging the request indefinitely.
+	            $safety_iterations++;
+	            if ($safety_iterations > 2000 || $last_recurring_date === $previous_recurring_date) {
+	                break;
+	            }
+	            $previous_recurring_date = $last_recurring_date;
 
 	            $re_create_at = date('Y-m-d', strtotime('+' . $repeat_every . ' ' . strtoupper($type), strtotime($last_recurring_date)));
 	            if ($to_date >= $re_create_at) {

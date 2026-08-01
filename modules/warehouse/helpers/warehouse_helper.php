@@ -75,7 +75,7 @@ function get_taxes($id =''){
  * @param  integer $id
  * @return array or row
  */
-function get_group_name($id = false)
+function warehouse_get_group_name($id = false)
     {
         $CI           = & get_instance();
 

@@ -63,20 +63,20 @@ function file_sharing_add_head_component()
 {
     $CI      = &get_instance();
     $viewuri = $_SERVER['REQUEST_URI'];
-    if (!(strpos($viewuri, '/admin/file_sharing/manage') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/file_sharing/manage') === false)) {
         echo '<link href="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/css/main.css') . '?v=' . FILE_SHARING_REVISION . '"  rel="stylesheet" type="text/css" />';
         echo '<link href="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/css/setting.css') . '?v=' . FILE_SHARING_REVISION . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if (!(strpos($viewuri, '/admin/file_sharing/setting') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/file_sharing/setting') === false)) {
         echo '<link href="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/css/setting.css') . '?v=' . FILE_SHARING_REVISION . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if (!(strpos($viewuri, '/admin/file_sharing/sharing') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/file_sharing/sharing') === false)) {
         echo '<link href="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/css/setting.css') . '?v=' . FILE_SHARING_REVISION . '"  rel="stylesheet" type="text/css" />';
     }
 
-    if (!(strpos($viewuri, '/admin/file_sharing/reports') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/file_sharing/reports') === false)) {
         echo '<link href="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/css/setting.css') . '?v=' . FILE_SHARING_REVISION . '"  rel="stylesheet" type="text/css" />';
     }
 }
@@ -90,7 +90,7 @@ function file_sharing_load_js()
     $viewuri     = $_SERVER['REQUEST_URI'];
     $mediaLocale = get_media_locale();
 
-    if (!(strpos($viewuri, 'admin/file_sharing/manage') === false)) {
+    if (!(strpos($viewuri, ADMIN_URL . '/file_sharing/manage') === false)) {
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/plugins/elFinder-2.1.57/js/elfinder.full.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
         if($mediaLocale == 'jp'){
             $mediaLocale = 'ja';
@@ -100,19 +100,19 @@ function file_sharing_load_js()
         }
     }
 
-    if (!(strpos($viewuri, 'admin/file_sharing/sharing') === false)) {
+    if (!(strpos($viewuri, ADMIN_URL . '/file_sharing/sharing') === false)) {
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/js/sharing.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
     }
 
-    if (!(strpos($viewuri, 'admin/file_sharing/setting') === false)) {
+    if (!(strpos($viewuri, ADMIN_URL . '/file_sharing/setting') === false)) {
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/js/setting.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
     }
 
-    if (!(strpos($viewuri, 'admin/file_sharing/download_management') === false)) {
+    if (!(strpos($viewuri, ADMIN_URL . '/file_sharing/download_management') === false)) {
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/js/download_management.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
     }
 
-    if (!(strpos($viewuri, '/admin/file_sharing/reports') === false)) {
+    if (!(strpos($viewuri, '/' . ADMIN_URL . '/file_sharing/reports') === false)) {
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/plugins/highcharts/modules/variable-pie.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';
         echo '<script src="' . module_dir_url(FILE_SHARING_MODULE_NAME, 'assets/plugins/highcharts/modules/export-data.js') . '?v=' . FILE_SHARING_REVISION . '"></script>';

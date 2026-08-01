@@ -145,7 +145,7 @@ if (!isset($warehouse_ft) && !isset($commodity_ft) && ($alert_filter == '')) {
 				}
 
 			} elseif ($aColumns[$i] == 'group_id') {
-				$_data = get_group_name($aRow['group_id']) != null ? get_group_name($aRow['group_id'])->name : '';
+				$_data = warehouse_get_group_name($aRow['group_id']) != null ? warehouse_get_group_name($aRow['group_id'])->name : '';
 			} elseif ($aColumns[$i] == db_prefix() . 'items.warehouse_id') {
 
 				if ($aRow['warehouse_ids'] != '') {
@@ -240,7 +240,7 @@ if (!isset($warehouse_ft) && !isset($commodity_ft) && ($alert_filter == '')) {
 				}
 
 			} elseif ($aColumns[$i] == 'group_id') {
-				$_data = get_group_name($aRow['group_id']) != null ? get_group_name($aRow['group_id'])->name : '';
+				$_data = warehouse_get_group_name($aRow['group_id']) != null ? warehouse_get_group_name($aRow['group_id'])->name : '';
 			} elseif ($aColumns[$i] == db_prefix() . 'items.warehouse_id') {
 
 				if ($aRow['warehouse_ids'] != '') {

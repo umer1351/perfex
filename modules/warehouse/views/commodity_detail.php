@@ -23,7 +23,7 @@
                  </tr>
                  <tr class="project-overview">
                     <td class="bold"><?php echo _l('commodity_group'); ?></td>
-                    <td><?php echo get_group_name(html_entity_decode($commodites->group_id)) != null ? get_group_name(html_entity_decode($commodites->group_id))->name : '' ; ?></td>
+                    <td><?php echo warehouse_get_group_name(html_entity_decode($commodites->group_id)) != null ? warehouse_get_group_name(html_entity_decode($commodites->group_id))->name : '' ; ?></td>
                  </tr>
                  <tr class="project-overview">
                     <td class="bold"><?php echo _l('commodity_barcode'); ?></td>

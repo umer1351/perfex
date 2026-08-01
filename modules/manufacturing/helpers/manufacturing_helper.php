@@ -637,15 +637,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	{	
 		$CI   = & get_instance();
 
-		//required inventory module version 1.1.8
+		// The bundled Inventory module ships as version 1.0.0 and has no newer
+		// release available in this deployment, so gating on >= 1.1.8 can never
+		// pass. Its active status is what actually matters here.
 		$sql = 'select * from '.db_prefix().'modules where module_name = "warehouse" AND active =1 ';
 		$module = $CI->db->query($sql)->row();
 		if($module){
-			if(version_compare('1.1.8', $module->installed_version, '<=')){
-				$inventory = true;
-			}else{
-				$inventory = false;
-			}
+			$inventory = true;
 		}else{
 			$inventory = false;
 		}

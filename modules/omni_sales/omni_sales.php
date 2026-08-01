@@ -57,13 +57,13 @@ function omni_sales_add_head_component(){
     if (!(strpos($viewuri,'/omni_sales/omni_sales_client/sales') === false)) {
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/omni_sales.css') . '"  rel="stylesheet" type="text/css" />';
     } 
-    if(!(strpos($viewuri,'/admin/omni_sales/detail_channel_wcm') === false) || !(strpos($viewuri,'/admin/omni_sales/add_woocommerce_store') === false) || !(strpos($viewuri,'/admin/omni_sales/setting') === false)){
+    if(!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/detail_channel_wcm') === false) || !(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/add_woocommerce_store') === false) || !(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/setting') === false)){
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/woocommerce.css') . '"  rel="stylesheet" type="text/css" />';
     }
-    if (!(strpos($viewuri,'/admin/omni_sales/view_order_detailt') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/view_order_detailt') === false)) {
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/cart/invoice.css') . '"  rel="stylesheet" type="text/css" />';
     } 
-    if (!(strpos($viewuri,'/admin/omni_sales/omni_sales_channel') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/omni_sales_channel') === false)) {
           echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/omni_sales.css') . '"  rel="stylesheet" type="text/css" />';
     } 
 }
@@ -181,35 +181,35 @@ function omni_sales_permissions()
 function omni_sales_load_js(){
     $CI = &get_instance();
     $viewuri = $_SERVER['REQUEST_URI'];
-    if (!(strpos($viewuri,'/admin/omni_sales/add_product_channel') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/add_product_channel') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/sales_channel/sales_channel.js').'"></script>';
-    }elseif(!(strpos($viewuri,'/admin/omni_sales/add_woocommerce_store') === false) || !(strpos($viewuri,'/admin/omni_sales/detail_channel_wcm') === false)){
+    }elseif(!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/add_woocommerce_store') === false) || !(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/detail_channel_wcm') === false)){
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/sales_channel/manage_channel_woocommerce.js').'"></script>';
     }
-    if (!(strpos($viewuri,'/admin/omni_sales/order_list') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/order_list') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/order_list/order_list.js').'"></script>';
     }
 
-    if (!(strpos($viewuri,'/admin/omni_sales/omni_sales_channel') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/omni_sales_channel') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/sales_channel/sales_channel.js').'"></script>';       
     } 
 
-    if (!(strpos($viewuri,'/admin/omni_sales/trade_discount') === false) || !(strpos($viewuri,'/admin/omni_sales/new_trade_discount') === false) || !(strpos($viewuri,'/admin/omni_sales/new_voucher') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/trade_discount') === false) || !(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/new_trade_discount') === false) || !(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/new_voucher') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/trade_discount/trade_discount.js').'"></script>';       
     } 
-    if (!(strpos($viewuri,'/admin/omni_sales/view_order_detail') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/view_order_detail') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/order/view_order.js').'"></script>';
     }
 
-    if (!(strpos($viewuri,'/admin/omni_sales/report') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/report') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/trade_discount/result_apply.js').'"></script>';       
     } 
 
-    if (!(strpos($viewuri,'/admin/omni_sales/diary_sync') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/diary_sync') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/diary_sync/diary_sync.js').'"></script>';       
     }
 
-    if(!(strpos($viewuri,'/admin/omni_sales/report') === false)){
+    if(!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/report') === false)){
         echo '<script src="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js') . '"></script>';
         echo '<script src="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/plugins/highcharts/modules/variable-pie.js') . '"></script>';
         echo '<script src="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/plugins/highcharts/modules/export-data.js') . '"></script>';
@@ -269,7 +269,7 @@ function client_portal_foot_js(){
     if (!(strpos($viewuri,'/omni_sales/omni_sales_client/detailt') === false)) {
         echo '<script src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/detailt_product/detailt_product.js').'"></script>';
     }
-    if (!(strpos($viewuri,'/admin/omni_sales/pos') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/pos') === false)) {
         echo '<script src="'.site_url().'/assets/plugins/jquery/jquery.min.js"></script>';
         echo '<script type="text/javascript" src="'.module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/js/pos/pos.js').'"></script>';
         echo '<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>';
@@ -300,7 +300,7 @@ function head_element(){
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/omni_sales.css') . '"  rel="stylesheet" type="text/css" />';
 
     }
-    if (!(strpos($viewuri,'/admin/omni_sales/view_order_detailt') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_cart') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_overview') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_order_detail') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/view_order_detailt') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_cart') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_overview') === false) || !(strpos($viewuri,'/omni_sales/omni_sales_client/view_order_detail') === false)) {
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/cart/invoice.css') . '"  rel="stylesheet" type="text/css" />';
     } 
     if (!(strpos($viewuri,'/omni_sales/omni_sales_client/order_list') === false)) {
@@ -309,7 +309,7 @@ function head_element(){
     if (!(strpos($viewuri,'/omni_sales/omni_sales_client/detailt') === false)) {
         echo '<link href="' . module_dir_url(OMNI_SALES_MODULE_NAME, 'assets/css/detailt_product/detailt_product.css') . '"  rel="stylesheet" type="text/css" />';
     } 
-    if (!(strpos($viewuri,'/admin/omni_sales/pos') === false)) {
+    if (!(strpos($viewuri,'/' . ADMIN_URL . '/omni_sales/pos') === false)) {
         echo '<link rel="stylesheet" type="text/css" id="fontawesome-css" href="'.site_url().'/assets/plugins/font-awesome/css/font-awesome.min.css?v=2.4.0">';
         echo '<link rel="stylesheet" type="text/css" id="datetimepicker-css" href="'.site_url().'/assets/plugins/datetimepicker/jquery.datetimepicker.min.css?v=2.4.0">';
         echo '<link rel="stylesheet" type="text/css" id="bootstrap-select-css" href="'.site_url().'/assets/plugins/bootstrap-select/css/bootstrap-select.min.css?v=2.4.0">';

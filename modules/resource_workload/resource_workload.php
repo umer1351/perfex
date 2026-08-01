@@ -88,13 +88,13 @@ function resource_workload_permissions() {
 function resource_workload_head_components() {
 	$CI = &get_instance();
 	$viewuri = $_SERVER['REQUEST_URI'];
-	if (!(strpos($viewuri, '/admin/resource_workload') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/resource_workload') === false)) {
 		echo '<link href="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
 		echo '<link href="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/frappe-gantt/frappe-gantt.css') . '"  rel="stylesheet" type="text/css" />';
 		echo '<link href="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/css/style.css') .'?v=' . STAFF_WORKLOAD_REVISION. '"  rel="stylesheet" type="text/css" />';
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
 	}
-	if (!(strpos($viewuri, '/admin/resource_workload/setting') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/resource_workload/setting') === false)) {
 		echo '<link href="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/handsontable/chosen.css') . '"  rel="stylesheet" type="text/css" />';
 	}
 }
@@ -106,7 +106,7 @@ function resource_workload_head_components() {
 function resource_workload_add_footer_components() {
 	$CI = &get_instance();
 	$viewuri = $_SERVER['REQUEST_URI'];
-	if (!(strpos($viewuri, '/admin/resource_workload') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/resource_workload') === false)) {
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/frappe-gantt/frappe-gantt.min.js') . '"></script>';
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js') . '"></script>';
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/highcharts/modules/variable-pie.js') . '"></script>';
@@ -116,7 +116,7 @@ function resource_workload_add_footer_components() {
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/highcharts/highcharts-3d.js') . '"></script>';
 	}
 
-	if (!(strpos($viewuri, '/admin/resource_workload/setting') === false)) {
+	if (!(strpos($viewuri, '/' . ADMIN_URL . '/resource_workload/setting') === false)) {
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/handsontable/chosen.jquery.js') . '"></script>';
 		echo '<script src="' . module_dir_url(RESOURCE_WORKLOAD_MODULE_NAME, 'assets/plugins/handsontable/handsontable-chosen-editor.js') . '"></script>';
 	}

@@ -173,7 +173,7 @@ function manufacturing_module_init_menu_items()
 		$CI = &get_instance();    
 		$viewuri = $_SERVER['REQUEST_URI'];
 		
-		if(!(strpos($viewuri,'admin/manufacturing/dashboard') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/dashboard') === false)){
 
 			echo '<script src="'.module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/highcharts/highcharts.js').'?v=' . VERSION_MANUFACTURING.'"></script>';
 			echo '<script src="'.module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/highcharts/variable-pie.js').'?v=' . VERSION_MANUFACTURING.'"></script>';
@@ -183,16 +183,16 @@ function manufacturing_module_init_menu_items()
 			echo '<script src="'.module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/highcharts/highcharts-3d.js').'?v=' . VERSION_MANUFACTURING.'"></script>';
 		}
 
-		if (!(strpos($viewuri, 'admin/manufacturing/add_edit_working_hour') === false) || !(strpos($viewuri, 'admin/manufacturing/add_edit_manufacturing_order') === false)|| !(strpos($viewuri, 'admin/manufacturing/view_manufacturing_order') === false) || !(strpos($viewuri, 'admin/manufacturing/view_work_order') === false) ) {
+		if (!(strpos($viewuri, ADMIN_URL . '/manufacturing/add_edit_working_hour') === false) || !(strpos($viewuri, ADMIN_URL . '/manufacturing/add_edit_manufacturing_order') === false)|| !(strpos($viewuri, ADMIN_URL . '/manufacturing/view_manufacturing_order') === false) || !(strpos($viewuri, ADMIN_URL . '/manufacturing/view_work_order') === false) ) {
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/handsontable/chosen.jquery.js') . '"></script>';
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/handsontable/handsontable-chosen-editor.js') . '"></script>';
 		}
 
-		if(!(strpos($viewuri,'admin/manufacturing/mo_work_order_manage') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/mo_work_order_manage') === false)){
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/frappe-gantt/frappe-gantt.min.js') . '"></script>';
 		}
 
-		if (!(strpos($viewuri, '/admin/manufacturing/view_product_detail') === false)) { 
+		if (!(strpos($viewuri, '/' . ADMIN_URL . '/manufacturing/view_product_detail') === false)) { 
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.min.js') . '"></script>';
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.jquery.min.js') . '"></script>';
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/simplelightbox/masonry-layout-vanilla.min.js') . '"></script>';
@@ -209,36 +209,36 @@ function manufacturing_module_init_menu_items()
 		$CI = &get_instance();
 		$viewuri = $_SERVER['REQUEST_URI'];
 
-		if(!(strpos($viewuri,'admin/manufacturing') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/styles.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 		}
-		if(!(strpos($viewuri,'admin/manufacturing/add_edit_work_center') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/add_edit_work_center') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/chart_on_header.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 		}
 
-		if(!(strpos($viewuri,'admin/manufacturing/add_edit_working_hour') === false) || !(strpos($viewuri,'admin/manufacturing/add_edit_manufacturing_order') === false) || !(strpos($viewuri,'admin/manufacturing/view_manufacturing_order') === false) || !(strpos($viewuri,'admin/manufacturing/view_work_order') === false) ){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/add_edit_working_hour') === false) || !(strpos($viewuri,ADMIN_URL . '/manufacturing/add_edit_manufacturing_order') === false) || !(strpos($viewuri,ADMIN_URL . '/manufacturing/view_manufacturing_order') === false) || !(strpos($viewuri,ADMIN_URL . '/manufacturing/view_work_order') === false) ){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.css') . '"  rel="stylesheet" type="text/css" />';
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/handsontable/chosen.css') . '"  rel="stylesheet" type="text/css" />';
 			echo '<script src="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/handsontable/handsontable.full.min.js') . '"></script>';
 		}
 
-		if(!(strpos($viewuri,'admin/manufacturing/add_edit_product') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/add_edit_product') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/products/product_chart_on_header.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/loading.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 		}
 
-		if(!(strpos($viewuri,'admin/manufacturing/view_work_order') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/view_work_order') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/work_orders/view_work_order.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 		}
 		
-		if(!(strpos($viewuri,'admin/manufacturing/mo_work_order_manage') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/mo_work_order_manage') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/frappe-gantt/frappe-gantt.css') . '"  rel="stylesheet" type="text/css" />';
 		}
-		if(!(strpos($viewuri,'admin/manufacturing/dashboard') === false)){
+		if(!(strpos($viewuri,ADMIN_URL . '/manufacturing/dashboard') === false)){
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/css/dashboard.css') . '?v=' . VERSION_MANUFACTURING. '"  rel="stylesheet" type="text/css" />';
 		}
 
-		if (!(strpos($viewuri, '/admin/manufacturing/view_product_detail') === false)) {
+		if (!(strpos($viewuri, '/' . ADMIN_URL . '/manufacturing/view_product_detail') === false)) {
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/simplelightbox/simple-lightbox.min.css') . '"  rel="stylesheet" type="text/css" />';
 			echo '<link href="' . module_dir_url(MANUFACTURING_MODULE_NAME, 'assets/plugins/simplelightbox/masonry-layout-vanilla.min.css') . '"  rel="stylesheet" type="text/css" />';
 		}  
