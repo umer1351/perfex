@@ -352,6 +352,13 @@ $route['portal/perfex_dashboard/(.+)'] = 'perfex_dashboard/$1';
 $route['portal/perfex_email_builder'] = 'perfex_email_builder';
 $route['portal/perfex_email_builder/(.+)'] = 'perfex_email_builder/$1';
 $route['portal/perfex_saas'] = 'perfex_saas';
+// The background "deploy status" poll (perfexSaasAdminDeployService in
+// admin.js) calls admin_url('perfex_saas/companies/deploy/...') without an
+// 'admin/' segment, which 404s because Companies.php lives in the module's
+// controllers/admin/ subdirectory. Route it there explicitly so the poll
+// stops erroring and leaving a stuck loading indicator on every page.
+$route['portal/perfex_saas/companies/deploy'] = 'perfex_saas/admin/companies/deploy';
+$route['portal/perfex_saas/companies/deploy/(.*)'] = 'perfex_saas/admin/companies/deploy/$1';
 $route['portal/perfex_saas/(.+)'] = 'perfex_saas/$1';
 $route['portal/prchat'] = 'prchat';
 $route['portal/prchat/(.+)'] = 'prchat/$1';

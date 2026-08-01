@@ -308,9 +308,17 @@ class Omni_sales_model extends App_Model
    * @return  array $result             
    */
   public function get_list_product_by_group($id_chanel, $id_group = '0',$key = '',$limit = 0, $ofset = 1){
+      // The stock-availability filter below depends on tblinventory_manage,
+      // which only exists once the Inventory Management module is installed.
+      // Skip that filter entirely when the table isn't present, instead of
+      // letting the query fail outright.
+      $inventory_where = '';
+      if ($this->db->table_exists(db_prefix() . 'inventory_manage')) {
+        $inventory_where = 'and (SELECT sum(inventory_number) as inventory_number FROM '.db_prefix().'inventory_manage where '.db_prefix().'inventory_manage.commodity_id = '.db_prefix().'items.id order by '.db_prefix().'inventory_manage.warehouse_id) > 0';
+      }
     if($key != ''){
       if($id_group!='0'){
-        $where = 'and (SELECT sum(inventory_number) as inventory_number FROM '.db_prefix().'inventory_manage where '.db_prefix().'inventory_manage.commodity_id = '.db_prefix().'items.id order by '.db_prefix().'inventory_manage.warehouse_id) > 0';
+        $where = $inventory_where;
         $count_product = 'select count(id) as count from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') and group_id = '.$id_group.' and  description like \'%'.$key.'%\' or rate like \'%'.$key.'%\' or long_description like \'%'.$key.'%\' '.$where.'';
         $select_list_product = 'select  id, description, long_description, rate, sku_code, tax, group_id from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') and group_id = '.$id_group.' and  description like \'%'.$key.'%\' or rate like \'%'.$key.'%\' or long_description like \'%'.$key.'%\' '.$where.' limit '.$limit.','.$ofset;
         $result = [
@@ -320,7 +328,7 @@ class Omni_sales_model extends App_Model
         return $result;
       }
       else{
-        $where = 'and (SELECT sum(inventory_number) as inventory_number FROM '.db_prefix().'inventory_manage where '.db_prefix().'inventory_manage.commodity_id = '.db_prefix().'items.id order by '.db_prefix().'inventory_manage.warehouse_id) > 0';
+        $where = $inventory_where;
         $count_product = 'select count(id) as count from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') and description like \'%'.$key.'%\' or rate like \'%'.$key.'%\' or long_description like \'%'.$key.'%\' '.$where.'';
 
         $select_list_product = 'select  id, description, long_description, rate, sku_code, tax, group_id from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.')  and  description like \'%'.$key.'%\' or rate like \'%'.$key.'%\' or long_description like \'%'.$key.'%\' '.$where.' limit '.$limit.','.$ofset;
@@ -333,7 +341,7 @@ class Omni_sales_model extends App_Model
     }
     else{      
       if($id_group!='0'){
-        $where = 'and (SELECT sum(inventory_number) as inventory_number FROM '.db_prefix().'inventory_manage where '.db_prefix().'inventory_manage.commodity_id = '.db_prefix().'items.id order by '.db_prefix().'inventory_manage.warehouse_id) > 0';
+        $where = $inventory_where;
         $count_product = 'select count(id) as count from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') and group_id = '.$id_group.' '.$where.'';
         $select_list_product = 'select  id, description, long_description, rate, sku_code, tax, group_id from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') and group_id = '.$id_group.' '.$where.' limit '.$limit.','.$ofset;
         $result = [
@@ -343,7 +351,7 @@ class Omni_sales_model extends App_Model
         return $result;
       }
       else{
-        $where = 'and (SELECT sum(inventory_number) as inventory_number FROM '.db_prefix().'inventory_manage where '.db_prefix().'inventory_manage.commodity_id = '.db_prefix().'items.id order by '.db_prefix().'inventory_manage.warehouse_id) > 0';
+        $where = $inventory_where;
         $count_product = 'select count(id) as count from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') '.$where.'';
 
         $select_list_product = 'select  id, description, long_description, rate, sku_code, tax, group_id from '.db_prefix().'items where id in (select product_id from '.db_prefix().'sales_channel_detailt where sales_channel_id = '.$id_chanel.') '.$where.' limit '.$limit.','.$ofset;
@@ -1522,12 +1530,13 @@ class Omni_sales_model extends App_Model
    * @return object
    */
   public function get_total_inventory_commodity($commodity_id = false) {
-    if ($commodity_id != false) {
+    if ($commodity_id != false && $this->db->table_exists(db_prefix() . 'inventory_manage')) {
       $sql = 'SELECT sum(inventory_number) as inventory_number FROM ' . db_prefix() . 'inventory_manage
       where ' . db_prefix() . 'inventory_manage.commodity_id = ' . $commodity_id . ' order by ' . db_prefix() . 'inventory_manage.warehouse_id';
       return $this->db->query($sql)->row();
     }
 
+    return null;
   }
 
   /**

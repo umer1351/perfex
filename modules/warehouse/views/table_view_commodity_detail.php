@@ -67,15 +67,18 @@ if(isset($commodity_ft)){
 }
 
 
-$where_alert_filter = ' AND '.db_prefix().'inventory_manage.inventory_number > "0"';
-array_push($where, $where_alert_filter);
+
+
+$current_day = date('Y-m-d');
+$where_alert_filter1 = ' AND '.db_prefix().'inventory_manage.expiry_date < "'.$current_day.'"';
+array_push($where, $where_alert_filter1);
 
 
 
 if(!isset($warehouse_ft) && !isset($commodity_ft) && ($alert_filter == '')){
-    $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, $join, $where, [db_prefix().'items.id',db_prefix().'inventory_manage.commodity_id',db_prefix().'inventory_manage.warehouse_id as warehouse_ids',db_prefix().'inventory_manage.inventory_number',db_prefix().'inventory_manage.date_manufacture',db_prefix().'inventory_manage.expiry_date', db_prefix().'items.description', db_prefix().'items.unit_id', db_prefix().'items.commodity_code',  db_prefix().'items.commodity_barcode', db_prefix().'items.commodity_type',  db_prefix().'items.warehouse_id',  db_prefix().'items.origin',   db_prefix().'items.color_id',   db_prefix().'items.style_id',   db_prefix().'items.model_id', db_prefix().'items.size_id',     db_prefix().'items.rate',  db_prefix().'items.tax',  db_prefix().'items.group_id' ,  db_prefix().'items.long_description' ,  db_prefix().'items.sku_code',  db_prefix().'items.sku_name',  db_prefix().'items.sub_group']);
+    $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, $join, $where, [db_prefix().'items.id',db_prefix().'inventory_manage.commodity_id',db_prefix().'inventory_manage.warehouse_id as warehouse_ids',db_prefix().'inventory_manage.inventory_number',db_prefix().'inventory_manage.date_manufacture',db_prefix().'inventory_manage.expiry_date', db_prefix().'items.description', db_prefix().'items.unit_id', db_prefix().'items.commodity_code',  db_prefix().'items.commodity_barcode', db_prefix().'items.commodity_type',  db_prefix().'items.warehouse_id',  db_prefix().'items.origin',   db_prefix().'items.color_id',   db_prefix().'items.style_id',   db_prefix().'items.model_id', db_prefix().'items.size_id',  db_prefix().'items.rate',  db_prefix().'items.tax',  db_prefix().'items.group_id' ,  db_prefix().'items.long_description' ,  db_prefix().'items.sku_code',  db_prefix().'items.sku_name',  db_prefix().'items.sub_group']);
 }else{
-    $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, $join, $where, [db_prefix().'items.id',db_prefix().'inventory_manage.commodity_id',db_prefix().'inventory_manage.warehouse_id as warehouse_ids',db_prefix().'inventory_manage.inventory_number',db_prefix().'inventory_manage.date_manufacture',db_prefix().'inventory_manage.expiry_date',db_prefix().'items.description',db_prefix().'items.group_id',db_prefix().'items.unit_id',db_prefix().'items.rate',db_prefix().'items.tax', db_prefix().'items.description', db_prefix().'items.unit_id', db_prefix().'items.commodity_code',  db_prefix().'items.commodity_barcode', db_prefix().'items.commodity_type',  db_prefix().'items.warehouse_id',  db_prefix().'items.origin',   db_prefix().'items.color_id',   db_prefix().'items.style_id',   db_prefix().'items.model_id', db_prefix().'items.size_id',    db_prefix().'items.rate',  db_prefix().'items.tax',  db_prefix().'items.group_id' ,  db_prefix().'items.long_description',  db_prefix().'items.sku_code',  db_prefix().'items.sku_name',  db_prefix().'items.sub_group' ]);
+    $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, $join, $where, [db_prefix().'items.id',db_prefix().'inventory_manage.commodity_id',db_prefix().'inventory_manage.warehouse_id as warehouse_ids',db_prefix().'inventory_manage.inventory_number',db_prefix().'inventory_manage.date_manufacture',db_prefix().'inventory_manage.expiry_date',db_prefix().'items.description',db_prefix().'items.group_id',db_prefix().'items.unit_id',db_prefix().'items.rate',db_prefix().'items.tax', db_prefix().'items.description', db_prefix().'items.unit_id', db_prefix().'items.commodity_code',  db_prefix().'items.commodity_barcode', db_prefix().'items.commodity_type',  db_prefix().'items.warehouse_id',  db_prefix().'items.origin',   db_prefix().'items.color_id',   db_prefix().'items.style_id',   db_prefix().'items.model_id', db_prefix().'items.size_id',   db_prefix().'items.rate',  db_prefix().'items.tax',  db_prefix().'items.group_id' ,  db_prefix().'items.long_description',  db_prefix().'items.sku_code',  db_prefix().'items.sku_name',  db_prefix().'items.sub_group' ]);
 
 }
 
@@ -87,7 +90,7 @@ if(!isset($warehouse_ft) && !isset($commodity_ft)  && ($alert_filter == '')){
          $row = [];
         for ($i = 0; $i < count($aColumns); $i++) {
             $_data = $aRow[$aColumns[$i]];
-           
+            
 
 
              if($aColumns[$i] == 'commodity_code') {
@@ -107,7 +110,7 @@ if(!isset($warehouse_ft) && !isset($commodity_ft)  && ($alert_filter == '')){
 
 
             }elseif ($aColumns[$i] == 'group_id') {
-                $_data = get_group_name($aRow['group_id']) != null ? get_group_name($aRow['group_id'])->name : '';
+                $_data = warehouse_get_group_name($aRow['group_id']) != null ? warehouse_get_group_name($aRow['group_id'])->name : '';
             }elseif($aColumns[$i] == db_prefix().'items.warehouse_id'){
 
                 if($aRow['id'] != ''){
