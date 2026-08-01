@@ -1118,20 +1118,32 @@ class Manufacturing extends AdminController
 	 */
 	public function product_variant_management($id = '')
 	{
+		$__debug_log = FCPATH . 'manual_debug.log';
+		register_shutdown_function(function () use ($__debug_log) {
+			$e = error_get_last();
+			if ($e && in_array($e['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+				file_put_contents($__debug_log, date('Y-m-d H:i:s') . " [product_variant_management] FATAL: " . $e['message'] . " in " . $e['file'] . ":" . $e['line'] . "\n", FILE_APPEND);
+			}
+		});
 
-		$data['title'] = _l('product_variant_management');
-		$data['commodity_filter'] = $this->manufacturing_model->get_product();
-		$data['product_id'] = $id;
-		$data['product_variants'] = $this->manufacturing_model->get_product_variant();
-		$data['product_types'] = mrp_product_type();
-		$data['product_categories'] = $this->manufacturing_model->mrp_get_item_group();
-		
-		$required_inventory_purchase = mrp_required_inventory_purchase_module();
-		//required inventory purchase
-		if($required_inventory_purchase['inventory'] == false || $required_inventory_purchase['purchase'] == false){
-			$this->load->view('manufacturing/settings/required_inventory_module', $data);
-		}else{
-			$this->load->view('products/product_variants/product_variant_manage', $data);
+		try {
+			$data['title'] = _l('product_variant_management');
+			$data['commodity_filter'] = $this->manufacturing_model->get_product();
+			$data['product_id'] = $id;
+			$data['product_variants'] = $this->manufacturing_model->get_product_variant();
+			$data['product_types'] = mrp_product_type();
+			$data['product_categories'] = $this->manufacturing_model->mrp_get_item_group();
+
+			$required_inventory_purchase = mrp_required_inventory_purchase_module();
+			//required inventory purchase
+			if($required_inventory_purchase['inventory'] == false || $required_inventory_purchase['purchase'] == false){
+				$this->load->view('manufacturing/settings/required_inventory_module', $data);
+			}else{
+				$this->load->view('products/product_variants/product_variant_manage', $data);
+			}
+		} catch (\Throwable $e) {
+			file_put_contents($__debug_log, date('Y-m-d H:i:s') . " [product_variant_management] CAUGHT: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine() . "\n" . $e->getTraceAsString() . "\n", FILE_APPEND);
+			throw $e;
 		}
 	}
 
