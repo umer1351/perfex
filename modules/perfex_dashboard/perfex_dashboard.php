@@ -33,7 +33,7 @@ function perfex_dashboard_module_menu_admin_items()
   if (has_permission('perfex_dashboard', '', 'my_dashboard_view')) {
     $CI->app_menu->add_sidebar_children_item('perfex-dashboard-module-menu-master', [
       'name'     => _l('my_dashboard'),
-      'href'     => admin_url('perfex_dashboard/dashboards/my_dashboard'),
+      'href'     => admin_url('zam_dashboard/dashboards/my_dashboard'),
       'position' => 1,
       'slug'     => 'dashboards',
     ]);
@@ -41,7 +41,7 @@ function perfex_dashboard_module_menu_admin_items()
   if (has_permission('perfex_dashboard', '', 'all_dashboard_view')) {
     $CI->app_menu->add_sidebar_children_item('perfex-dashboard-module-menu-master', [
       'name'     => _l('all_dashboards'),
-      'href'     => admin_url('perfex_dashboard/dashboards'),
+      'href'     => admin_url('zam_dashboard/dashboards'),
       'position' => 2,
       'slug'     => 'dashboards',
     ]);
@@ -49,7 +49,7 @@ function perfex_dashboard_module_menu_admin_items()
   if (has_permission('perfex_dashboard', '', 'widget_view')) {
     $CI->app_menu->add_sidebar_children_item('perfex-dashboard-module-menu-master', [
       'name'     => _l('all_widgets'),
-      'href'     => admin_url('perfex_dashboard/widgets'),
+      'href'     => admin_url('zam_dashboard/widgets'),
       'position' => 3,
       'slug'     => 'widgets',
     ]);
@@ -57,7 +57,7 @@ function perfex_dashboard_module_menu_admin_items()
   if (has_permission('perfex_dashboard', '', 'widget_category_view')) {
     $CI->app_menu->add_sidebar_children_item('perfex-dashboard-module-menu-master', [
       'name'     => _l('widget_categories'),
-      'href'     => admin_url('perfex_dashboard/categories'),
+      'href'     => admin_url('zam_dashboard/categories'),
       'position' => 4,
       'slug'     => 'categories',
     ]);
@@ -65,7 +65,7 @@ function perfex_dashboard_module_menu_admin_items()
   if (has_permission('perfex_dashboard', '', 'dashboard_settings')) {
     $CI->app_menu->add_sidebar_children_item('perfex-dashboard-module-menu-master', [
       'name'     => _l('settings'),
-      'href'     => admin_url('perfex_dashboard/settings'),
+      'href'     => admin_url('zam_dashboard/settings'),
       'position' => 4,
       'slug'     => 'settings',
     ]);

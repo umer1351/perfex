@@ -7,7 +7,7 @@ class Categories extends AdminController
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('perfex_dashboard_model');
+    $this->load->model('perfex_dashboard/perfex_dashboard_model');
   }
 
   public function index()

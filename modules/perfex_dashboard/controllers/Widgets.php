@@ -10,7 +10,7 @@ class Widgets extends AdminController
   {
     parent::__construct();
     $this->load->model('dashboard_model');
-    $this->load->model('perfex_dashboard_model');
+    $this->load->model('perfex_dashboard/perfex_dashboard_model');
   }
 
   public function template_demo()

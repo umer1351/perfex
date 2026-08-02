@@ -70,7 +70,7 @@ function perfex_dashboard_render_widgets($widgets)
 function perfex_dashboard_render_widgets_from_dashboard($dashboard, $container)
 {
     $CI = &get_instance();
-    $CI->load->model('perfex_dashboard_model');
+    $CI->load->model('perfex_dashboard/perfex_dashboard_model');
 
     $ids = [];
     if(isset($dashboard['dashboard_widgets'][$container])) {
@@ -89,7 +89,7 @@ function perfex_dashboard_render_widgets_from_dashboard($dashboard, $container)
 function perfex_dashboard_get_available_widgets($dashboard)
 {
     $CI = &get_instance();
-    $CI->load->model('perfex_dashboard_model');
+    $CI->load->model('perfex_dashboard/perfex_dashboard_model');
 
     $containers = ['top-12', 'top-left-first-4', 'top-left-last-4', 'top-right-first-4', 'top-right-last-4', 'middle-left-6', 'middle-right-6', 'left-8', 'right-4', 'bottom-left-4', 'bottom-middle-4', 'bottom-right-4'];
     
@@ -109,7 +109,7 @@ function perfex_dashboard_get_available_widgets($dashboard)
 function perfex_dashboard_get_categories() 
 {
     $CI = &get_instance();
-    $CI->load->model('perfex_dashboard_model');
+    $CI->load->model('perfex_dashboard/perfex_dashboard_model');
 
     $categories = $CI->perfex_dashboard_model->get_categories();
 
@@ -162,7 +162,7 @@ function perfex_dashboard_scan_widgets_2()
 function perfex_dashboard_scan_widgets()
 {
     $CI = &get_instance();
-    $CI->load->model('perfex_dashboard_model');
+    $CI->load->model('perfex_dashboard/perfex_dashboard_model');
 
     $widget_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . '../views/widgets';
     $widgets = directory_map($widget_path, 1);

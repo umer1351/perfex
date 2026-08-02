@@ -349,6 +349,11 @@ $route['portal/perfex_dark_theme'] = 'perfex_dark_theme';
 $route['portal/perfex_dark_theme/(.+)'] = 'perfex_dark_theme/$1';
 $route['portal/perfex_dashboard'] = 'perfex_dashboard';
 $route['portal/perfex_dashboard/(.+)'] = 'perfex_dashboard/$1';
+// Branding alias: the menu links to zam_dashboard/... instead of
+// perfex_dashboard/... so the address bar never shows "perfex", while the
+// underlying module (folder, DB tables, constants) stays perfex_dashboard.
+$route['portal/zam_dashboard'] = 'perfex_dashboard';
+$route['portal/zam_dashboard/(.+)'] = 'perfex_dashboard/$1';
 $route['portal/perfex_email_builder'] = 'perfex_email_builder';
 $route['portal/perfex_email_builder/(.+)'] = 'perfex_email_builder/$1';
 $route['portal/perfex_saas'] = 'perfex_saas';
